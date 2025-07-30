@@ -1,0 +1,30 @@
+.waveContainer{
+    position: absolute;
+    bottom: 0;
+    height: 25vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: 2s ease-out;
+    overflow: hidden;
+}
+
+.waveContainer > .wave {
+    position: absolute;
+    height: 100%;
+    bottom: -20px;
+    overflow: hidden;
+}
+.secretArea{
+    bottom: 0;
+    position: absolute;
+    height: 0;
+    transition: 2s ease;
+}
+.waveContainer:hover > .secretArea{
+    height: 10vh;
+}
+.waveContainer:hover{
+    transition: 2s ease;
+    height: 35vh;
+}
