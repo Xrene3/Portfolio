@@ -7,7 +7,13 @@ import AboutMe from './sections/AboutMe/AboutMe.jsx'
 import './font.css'
 function App() {
   const [isDarkMode, setDarkMode] = useState(false);
-
+  const technical_skills = [
+    'laravel',
+    'css',
+    'html',
+    'tailwind',
+    'bootstrap'
+  ];
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') {
@@ -53,6 +59,7 @@ function App() {
               </div>
               <div className="bg-white/70">
                 Technical Skills
+                {technical_skills.map((skill, i) => <p>{skill}</p>)}
               </div>
 
             </div>
