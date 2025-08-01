@@ -2,7 +2,7 @@ import './Card.css'
 
 function Card({ title, className, children }) {
     return (
-        <div className="card shadow-lg p-4 m-1.5 rounded bg-gray-600 backdrop-blur-md text-sm">
+        <div className="card shadow-lg p-8 m-2.5 rounded  backdrop-blur-md text-sm border-2 bg-sky-100 border-gray-200/50">
             {title && <h3 className="font-bold">{title}</h3>}
             <div className="text-center">
                 {children}

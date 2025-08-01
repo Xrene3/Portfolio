@@ -1,7 +1,7 @@
 .waveContainer{
     position: absolute;
     bottom: 0;
-    height: 25vh;
+    height: 40vh;
     left: 0;
     right: 0;
     width: 100%;
@@ -21,10 +21,10 @@
     height: 0;
     transition: 2s ease;
 }
-.waveContainer:hover > .secretArea{
+.waveContainer:has(.wave:hover, .secretArea:hover) .secretArea{
     height: 10vh;
 }
-.waveContainer:hover{
-    transition: 2s ease;
-    height: 35vh;
-}
+.waveContainer:has(.wave:hover, .secretArea:hover) {
+    height: 50vh;
+    transition: height 2s ease;
+  }

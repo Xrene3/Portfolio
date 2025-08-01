@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Wave from 'react-wavify'
 import './Waves.css'
 import Bottle from '../Bottle/Bottle.jsx'
@@ -7,14 +7,24 @@ import { faHippo, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 function Wavify() {
     const [isPaused, setWave] = useState(false);
 
+    useEffect(() => {
+        const localWaveStatus = localStorage.getItem('waveStatus');
+        if (localWaveStatus === 'active') {
+            setWave(true);
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('waveStatus', isPaused ? 'active' : 'inactive');
+    }, [isPaused])
+
     return (
         <>
-
             <div className="waveContainer">
 
                 <Wave
                     className="wave"
-                    fill='#B589D6'
+                    fill='#9DECE6'
                     paused={isPaused}
                     style={{ display: 'flex' }}
                     options={{
@@ -27,11 +37,24 @@ function Wavify() {
 
                 <Wave
                     className="wave"
-                    fill='#9969C7'
+                    fill='#4BC7CE'
+                    paused={isPaused}
+                    style={{ display: 'flex' }}
+                    options={{
+                        height: 20,
+                        amplitude: 27,
+                        speed: 0.15,
+                        points: 3
+                    }}
+                />
+
+                <Wave
+                    className="wave"
+                    fill='#006995'
                     paused={isPaused}
                     style={{ display: '' }}
                     options={{
-                        height: 40,
+                        height: 70,
                         amplitude: 20,
                         speed: 0.25,
                         points: 4
@@ -40,11 +63,11 @@ function Wavify() {
 
                 <Wave
                     className="wave"
-                    fill='#804FB3'
+                    fill='#1F4168'
                     paused={isPaused}
                     style={{ display: '' }}
                     options={{
-                        height: 70,
+                        height: 120,
                         amplitude: 30,
                         speed: 0.2,
                         points: 5
