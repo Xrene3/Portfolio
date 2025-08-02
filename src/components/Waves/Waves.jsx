@@ -76,7 +76,7 @@ function Wavify() {
                 {/* <p className="bottom-0 absolute w-full text-center secretMessage text-white italic font-bold">Deputa</p> */}
 
                 <div className=" absolute w-full text-center secretArea">
-                    <button class=" px-3 py-3 text-white text-italic" onClick={() => setWave(prev => !prev)}>
+                    <button className=" px-3 py-3 text-white text-italic" onClick={() => setWave(prev => !prev)}>
                         {isPaused ? <FontAwesomeIcon icon={faPlay} /> : <FontAwesomeIcon icon={faPause} />}
                     </button>
                 </div>
