@@ -20,6 +20,9 @@ function App() {
     localStorage.setItem('theme', currentTheme)
   };
 
+
+  const [page, setPage] = useState('introduction');
+
   const technical_skills = [
     'laravel',
     'css',
@@ -31,7 +34,12 @@ function App() {
 
   return (
     <>
-      <main className="relative min-h-screen bg-gradient-to-b dark:from-sky-200 dark:to-white">
+      <main className="
+      relative 
+      min-h-screen 
+      bg-gradient-to-b dark:from-zinc-900 dark:to-sky-800 from-sky-200 to-white
+      dark:text-sky-50 text-zinc-900
+      ">
         <Slider>
           <div className="dark-mode-switch">
             Intro / First

@@ -11,7 +11,8 @@ function Card({ title, className, children }) {
         text-sm 
         border-2 
         bg-sky-100 
-        dark:bg-sky-800
+        dark:bg-sky-900
+        dark:text-sky-100
         border-gray-200/50">
             {title && <h3 className="font-bold">{title}</h3>}
             <div className="text-center">
