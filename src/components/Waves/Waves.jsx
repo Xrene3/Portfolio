@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Wave from 'react-wavify'
 import './Waves.css'
 import Bottle from '../Bottle/Bottle.jsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHippo, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
-function Wavify() {
+function Wavify({ waveMultiplier }) {
     const [isPaused, setWave] = useState(false);
 
     useEffect(() => {
@@ -21,7 +19,6 @@ function Wavify() {
     return (
         <>
             <div className="waveContainer">
-
                 <Wave
                     className="wave"
                     fill='#9DECE6'
@@ -30,7 +27,7 @@ function Wavify() {
                     options={{
                         height: 10,
                         amplitude: 25,
-                        speed: 0.15,
+                        speed: 0.15 * waveMultiplier,
                         points: 3
                     }}
                 />
@@ -43,7 +40,7 @@ function Wavify() {
                     options={{
                         height: 20,
                         amplitude: 27,
-                        speed: 0.15,
+                        speed: 0.15 * waveMultiplier,
                         points: 3
                     }}
                 />
@@ -56,7 +53,7 @@ function Wavify() {
                     options={{
                         height: 70,
                         amplitude: 20,
-                        speed: 0.25,
+                        speed: 0.25 * waveMultiplier,
                         points: 4
                     }}
                 />
@@ -69,7 +66,7 @@ function Wavify() {
                     options={{
                         height: 120,
                         amplitude: 30,
-                        speed: 0.2,
+                        speed: 0.2 * waveMultiplier,
                         points: 5
                     }}
                 />
@@ -77,7 +74,7 @@ function Wavify() {
 
                 <div className=" absolute w-full text-center secretArea">
                     <button className=" px-3 py-3 text-white text-italic" onClick={() => setWave(prev => !prev)}>
-                        {isPaused ? <FontAwesomeIcon icon={faPlay} /> : <FontAwesomeIcon icon={faPause} />}
+                        {isPaused ? <h1>Unpause</h1> : <h1>Pause</h1>}
                     </button>
                 </div>
 

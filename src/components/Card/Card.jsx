@@ -3,17 +3,18 @@ import './Card.css'
 function Card({ title, className, children }) {
     return (
         <div className="card 
-        shadow-lg 
+        shadow-xl
+        dark:shadow-blue-300/20
         p-8 
-        m-2.5 
+        m-1.5 
         rounded 
         backdrop-blur-md 
         text-sm 
         border-2 
-        bg-sky-100 
+        bg-sky-50 
         dark:bg-sky-900
         dark:text-sky-100
-        border-gray-200/50">
+        border-zinc-300/50">
             {title && <h3 className="font-bold">{title}</h3>}
             <div className="text-center">
                 {children}
