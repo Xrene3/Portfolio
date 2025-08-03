@@ -104,6 +104,24 @@ function App() {
               <div className="bg-white/70">
                 Personal Skills
               </div>
+              <Card>
+                <h1>Technologies I've used</h1>
+                <ul className="list-disc ml-5">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                  <li>Bootstrap</li>
+                  <li>Tailwind</li>
+                  <li>AlpineJS</li>
+                  <li>Laravel</li>
+                  <li>Livewire</li>
+                  <li>React</li>
+                  <li>Firebase RTDB <p>(Kreait | Firebase for php)</p></li>
+                </ul>
+
+              </Card>
             </div>
           </div>
 
