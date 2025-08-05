@@ -24,7 +24,7 @@ export default function Slider({ children, page, setPage, navigating }) {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="flex justify-center mt-30 w-full h-full z-50">
+                <div className="flex justify-center mt-30 w-full h-full z-50 p-4">
                     {/* <div className="max-w-2xl w-full px-4 z-10"> */}
                     {Array.isArray(children) ? children[page] : children}
                     {/* </div> */}

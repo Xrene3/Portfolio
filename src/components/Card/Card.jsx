@@ -17,7 +17,7 @@ function Card({ title, className, children }) {
         dark:text-indigo-100
         border-indigo-300/30
         ">
-            {title && <h3 className="font-bold xl:text-xl text-orange-500 dark:text-yellow-200 mb-3">{title}</h3>}
+            {title && <h3 className="font-bold xl:text-xl text-orange-500 dark:text-lime-200 mb-3">{title}</h3>}
             <div className="text-center">
                 {children}
             </div>
