@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Wave from 'react-wavify'
 import './Waves.css'
 import Bottle from '../Bottle/Bottle.jsx'
-function Wavify({ waveMultiplier }) {
-    const [isPaused, setWave] = useState(false);
-
+function Wavify({ waveMultiplier, isWaving }) {
     useEffect(() => {
         const localWaveStatus = localStorage.getItem('waveStatus');
         if (localWaveStatus === 'active') {
@@ -13,16 +11,16 @@ function Wavify({ waveMultiplier }) {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('waveStatus', isPaused ? 'active' : 'inactive');
-    }, [isPaused])
-
+        localStorage.setItem('waveStatus', isWaving ? 'active' : 'inactive');
+    }, [isWaving])
     return (
         <>
-            <div className="waveContainer">
+
+            <div className="waveContainer z-0">
                 <Wave
                     className="wave"
                     fill='#9DECE6'
-                    paused={isPaused}
+                    paused={isWaving}
                     style={{ display: 'flex' }}
                     options={{
                         height: 10,
@@ -35,7 +33,7 @@ function Wavify({ waveMultiplier }) {
                 <Wave
                     className="wave"
                     fill='#4BC7CE'
-                    paused={isPaused}
+                    paused={isWaving}
                     style={{ display: 'flex' }}
                     options={{
                         height: 20,
@@ -48,7 +46,7 @@ function Wavify({ waveMultiplier }) {
                 <Wave
                     className="wave"
                     fill='#006995'
-                    paused={isPaused}
+                    paused={isWaving}
                     style={{ display: '' }}
                     options={{
                         height: 70,
@@ -61,7 +59,7 @@ function Wavify({ waveMultiplier }) {
                 <Wave
                     className="wave"
                     fill='#1F4168'
-                    paused={isPaused}
+                    paused={isWaving}
                     style={{ display: '' }}
                     options={{
                         height: 120,
@@ -71,13 +69,6 @@ function Wavify({ waveMultiplier }) {
                     }}
                 />
                 {/* <p className="bottom-0 absolute w-full text-center secretMessage text-white italic font-bold">Deputa</p> */}
-
-                <div className=" absolute w-full text-center secretArea">
-                    <button className=" px-3 py-3 text-white text-italic" onClick={() => setWave(prev => !prev)}>
-                        {isPaused ? <h1>Unpause</h1> : <h1>Pause</h1>}
-                    </button>
-                </div>
-
             </div>
         </>
     )

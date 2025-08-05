@@ -15,16 +15,3 @@
     bottom: -20px;
     overflow: hidden;
 }
-.secretArea{
-    bottom: 0;
-    position: absolute;
-    height: 0;
-    transition: 2s ease;
-}
-.waveContainer:has(.wave:hover, .secretArea:hover) .secretArea{
-    height: 10vh;
-}
-.waveContainer:has(.wave:hover, .secretArea:hover) {
-    height: 50vh;
-    transition: height 2s ease;
-  }

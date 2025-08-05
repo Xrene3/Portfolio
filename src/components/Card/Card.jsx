@@ -2,9 +2,10 @@ import './Card.css'
 
 function Card({ title, className, children }) {
     return (
-        <div className="card 
+        <div className="
+        card 
         shadow-xl
-        dark:shadow-blue-300/20
+        dark:shadow-indigo-300/20
         p-8 
         m-1.5 
         rounded 
@@ -12,10 +13,11 @@ function Card({ title, className, children }) {
         text-sm 
         border-2 
         bg-sky-50 
-        dark:bg-sky-900
-        dark:text-sky-100
-        border-zinc-300/50">
-            {title && <h3 className="font-bold">{title}</h3>}
+        dark:bg-gray-800
+        dark:text-indigo-100
+        border-indigo-300/30
+        ">
+            {title && <h3 className="font-bold xl:text-xl text-orange-500 dark:text-yellow-200 mb-3">{title}</h3>}
             <div className="text-center">
                 {children}
             </div>

@@ -3,7 +3,7 @@ import Header from './components/Navbar/Header.jsx'
 import Slider from './components/Slider/Slider.jsx'
 import Card from './components/Card/Card.jsx'
 import Waves from './components/Waves/Waves.jsx'
-import AboutMe from './sections/AboutMe/AboutMe.jsx'
+import AboutMe from './pages/AboutMe/AboutMe.jsx'
 import './font.css'
 function App() {
 
@@ -20,6 +20,8 @@ function App() {
     document.documentElement.classList.toggle('dark', currentTheme === 'dark');
     localStorage.setItem('theme', currentTheme)
   };
+
+  const [isWaving, setWave] = useState(false);
 
   // Page | Section handler
   const [page, setPage] = useState(0);
@@ -62,50 +64,46 @@ function App() {
     <>
       <main className="
       relative 
-      min-h-[100vh] 
-      min-w-[100vw]
-      bg-gradient-to-b dark:from-zinc-900 dark:to-sky-800 
+      min-h-screen
+      min-w-screen
+      bg-gradient-to-b dark:from-zinc-900 dark:to-indigo-900 
       from-sky-200 to-white
       dark:text-sky-50 text-zinc-900
       ">
-        <div className="dark-mode-switch absolute top-12">
+        <div className="dark-mode-switch absolute">
           <button
             className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
             onClick={toggleTheme}>
             Toggle
             <p>{waveMultiplier}</p>
           </button>
+
+          <button className="text-white text-italic" onClick={() => setWave(prev => !prev)}>
+            {isWaving ? <h1>Unpause</h1> : <h1>Pause</h1>}
+          </button>
         </div>
         <Slider page={page} setPage={setPage} navigating={navigating}>
-
-
           {/* Main body / Content */}
+          <div className="Introduction m-4">
+            <h1
+              className='lg:text-3xl'>Hello! my name is
+              <p className='lg:textl-2xl text-orange-600 dark:text-orange-200'> Ryan Clark Geneveo</p>
+            </h1>
+            <br />
+            <p className='lg:text-lg'>Welcome to my page!</p>
+          </div>
 
-          <div className="Introduction">
-            <div className="w-full">
-              <Card>
-                <h1
-                  className='lg:text-3xl'>Hello! my name is
-                  <p className='lg:textl-2xl text-orange-600 dark:text-orange-200'> Ryan Clark Geneveo</p>
-                </h1>
-                <br />
-                <p className='lg:text-lg'>Welcome to my page!</p>
-              </Card>
-            </div>
-          </div>
           <div className="about-me">
-            <Card>
-              <AboutMe />
-            </Card>
+            <AboutMe />
           </div>
+
           <div className="projects">
             Skills
             <div className="flex justify-between">
               <div className="bg-white/70">
                 Personal Skills
               </div>
-              <Card>
-                <h1>Technologies I've used</h1>
+              <Card title="Technologies I've used">
                 <ul className="list-disc ml-5">
                   <li>HTML</li>
                   <li>CSS</li>
@@ -151,9 +149,7 @@ function App() {
         </Slider>
 
         {/* Water footer */}
-        <div className="coast z-1">
-          <Waves waveMultiplier={waveMultiplier} />
-        </div>
+        <Waves waveMultiplier={waveMultiplier} isWaving={isWaving} />
       </main >
     </>
   )
