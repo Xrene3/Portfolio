@@ -70,23 +70,25 @@ function App() {
       from-sky-200 to-white
       dark:text-sky-50 text-zinc-900
       ">
-        <div className="dark-mode-switch absolute">
-          <button
-            className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
-            onClick={toggleTheme}>
-            Toggle
-            <p>{waveMultiplier}</p>
-          </button>
+        <div className="dark-mode-switch w-full absolute">
+          <div className="flex justify-center">
+            <button
+              className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
+              onClick={toggleTheme}>
+              Toggle Dark Mode
+              {/* <p>{waveMultiplier}</p> */}
+            </button>
 
-          <button className="text-white text-italic" onClick={() => setWave(prev => !prev)}>
-            {isWaving ? <h1>Unpause</h1> : <h1>Pause</h1>}
-          </button>
+            <button className="text-white text-italic" onClick={() => setWave(prev => !prev)}>
+              {isWaving ? <h1>Unpause</h1> : <h1>Pause</h1>}
+            </button>
+          </div>
         </div>
         <Slider page={page} setPage={setPage} navigating={navigating}>
           {/* Main body / Content */}
           <div className="Introduction m-4">
             <h1
-              className='lg:text-3xl'>Hello! my name is
+              className='lg:text-3xl'>Hello! i'm
               <p className='lg:textl-2xl text-orange-600 dark:text-orange-200'> Ryan Clark Geneveo</p>
             </h1>
             <br />

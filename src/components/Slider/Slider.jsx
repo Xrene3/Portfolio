@@ -14,8 +14,8 @@ export default function Slider({ children, page, setPage, navigating }) {
 
     return (
         <>
-            <div className="flex justify-between w-screen h-screen overflow-hidden">
-                <div className="my-auto z-50 hidden md:block md:me-5">
+            <div className="flex justify-between w-screen">
+                <div className="absolute md:top-1/2 left-0 z-70 md:me-5">
                     <button
                         onClick={prevSlide}
                         className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2">
@@ -30,7 +30,7 @@ export default function Slider({ children, page, setPage, navigating }) {
                     {/* </div> */}
                 </div>
 
-                <div className="my-auto z-50 hidden md:block">
+                <div className="absolute md:top-1/2 right-0 z-70 md:ms-5">
                     <button
                         onClick={nextSlide}
                         className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2 md:ms-5">

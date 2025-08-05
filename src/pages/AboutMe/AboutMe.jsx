@@ -3,19 +3,18 @@ import './AboutMe.css'
 function AboutMe() {
     return (
         <>
-            <div className="flex lg:flex-row flex-col justify-center">
-                <div className="about-me xl:w-2/4">
+            <div className="flex gap-x-8 lg:flex-row flex-col justify-center md:px-30">
+                <div className="about-me xl:w-2/3">
                     <Card title='About me'>
                         <div>
-                            <div className='lg:text-xl'>
+                            <div className='lg:text-xl text-lg'>
                                 <div className='text-justify'>
-                                    <p>A soon-to-be graduate of Cavite State University with a
+                                    <p className='indent-8'>A soon-to-be graduate of Cavite State University with a
                                         <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology. </span>
                                         Knowledgeable in networking, computer hardware, and software.
                                     </p>
                                     <br />
-                                    <br />
-                                    <p>
+                                    <p className='indent-8'>
                                         I have a strong interest about technology and interested to work in an environment where I can apply and enhance my Knowledge about technology
                                     </p>
                                 </div>
@@ -24,7 +23,7 @@ function AboutMe() {
                     </Card>
                 </div>
 
-                <div className="background xl:w-1/4">
+                <div className="background xl:w-1/3">
                     <Card title="Educational Background">
                         <ol class="relative border-s border-gray-200 dark:border-gray-700 text-start">
                             <li class="mb-10 ms-4">
