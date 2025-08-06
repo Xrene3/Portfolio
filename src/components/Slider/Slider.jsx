@@ -15,7 +15,7 @@ export default function Slider({ children, page, setPage, navigating }) {
     return (
         <>
             <div className="flex justify-between w-screen">
-                <div className="absolute md:top-1/2 left-0 z-70 md:me-5">
+                <div className={`${page < 1 ? 'hidden' : ''} absolute md:top-1/2 left-0 z-70 md:me-5`}>
                     <button
                         onClick={prevSlide}
                         className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2">
@@ -24,13 +24,13 @@ export default function Slider({ children, page, setPage, navigating }) {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="flex justify-center mt-30 w-full h-full z-50 p-4">
+                <div className="flex justify-center mt-30 w-full h-full z-50 p-4 md:px-30">
                     {/* <div className="max-w-2xl w-full px-4 z-10"> */}
                     {Array.isArray(children) ? children[page] : children}
                     {/* </div> */}
                 </div>
 
-                <div className="absolute md:top-1/2 right-0 z-70 md:ms-5">
+                <div className={`${page >= totalPages - 1 ? 'hidden' : ''} absolute md:top-1/2 right-0 z-70 md:ms-5`}>
                     <button
                         onClick={nextSlide}
                         className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2 md:ms-5">
