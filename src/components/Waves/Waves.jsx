@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Wave from 'react-wavify'
 import './Waves.css'
 import Bottle from '../Bottle/Bottle.jsx'
-function Wavify({ waveMultiplier, isWaving }) {
+function Wavify({ waveMultiplier, isWaving, setWave }) {
     useEffect(() => {
         const localWaveStatus = localStorage.getItem('waveStatus');
         if (localWaveStatus === 'active') {

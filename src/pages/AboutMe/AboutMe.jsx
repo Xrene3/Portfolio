@@ -9,9 +9,9 @@ function AboutMe() {
                     <div>
                         <div className='lg:text-lg'>
                             <div className='text-justify'>
-                                <p className='indent-8'>A soon-to-be graduate of Cavite State University with a
+                                <p className='indent-8'>A graduate from Cavite State University with a
                                     <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology. </span>
-                                    Knowledgeable in networking, computer hardware, and software.
+                                    Knowledgeable in computer hardware, software and networking.
                                 </p>
                                 <br />
                                 <p className='indent-8'>

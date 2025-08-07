@@ -3,8 +3,11 @@ import Header from './components/Navbar/Header.jsx'
 import Slider from './components/Slider/Slider.jsx'
 import Card from './components/Card/Card.jsx'
 import Waves from './components/Waves/Waves.jsx'
+
 import AboutMe from './pages/AboutMe/AboutMe.jsx'
 import Skills from './pages/Skills/Skills.jsx'
+import Projects from './pages/Projects/Projects.jsx'
+
 import Logo from './components/Logo/Logo.jsx'
 import './font.css'
 function App() {
@@ -96,7 +99,7 @@ function App() {
             </h1>
             <br />
             <p className='lg:text-lg font-semibold'>Welcome to my page!</p>
-            <p className="lg:text-lg text-gray-500">i do stuff, tinker with computers, web dev, play games</p>
+            <p className="lg:text-lg text-gray-500">i try to do stuff, tinker with computers, web dev, play games</p>
           </div>
 
           <div className="about-me">
@@ -109,22 +112,7 @@ function App() {
 
           <div className="projects">
             Project Section
-            <div className="flex gap-2.5">
-              <Card className="">
-                <div>
-                  <h1>Barangay Management System</h1>
-                  <p>Made for MetroBulihan (Bayani)</p>
-                  <p>Made with TALL Stack (Tailwind, Alpine, Laravel, Livewire)</p>
-                </div>
-              </Card>
-
-              <Card className="">
-                <div>
-                  <h1>This Portfolio!</h1>
-                  <p>Made with React</p>
-                </div>
-              </Card>
-            </div>
+            <Projects />
           </div>
 
           <div className="projects">
@@ -133,7 +121,7 @@ function App() {
         </Slider>
 
         {/* Water footer */}
-        <Waves waveMultiplier={waveMultiplier} isWaving={isWaving} />
+        <Waves waveMultiplier={waveMultiplier} isWaving={isWaving} setWave={setWave} />
       </main >
     </>
   )
