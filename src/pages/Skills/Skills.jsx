@@ -56,8 +56,9 @@ export default function Skills() {
                         <div className="lg:w-2/3">
                             <Card title="Technologies I've used">
                                 <div className="flex flex-wrap justify-center gap-4" >
-                                    {icons.map((iconName) => (
+                                    {icons.map((iconName, index) => (
                                         <div
+                                            key={index}
                                             onMouseEnter={() => { setIsHovering(true); playSfx(); }}
                                             onMouseLeave={() => { setIsHovering(false); }}
 
