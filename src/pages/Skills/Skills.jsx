@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import useSound from 'use-sound';
 import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
-const soundUrl = process.env.PUBLIC_URL + "/sounds/sfx/minecraft_item_pickup.mp3"
+const soundUrl = "/Portfolio/sounds/sfx/minecraft_item_pickup.mp3"
 const icons = [
     'html',
     'css',
