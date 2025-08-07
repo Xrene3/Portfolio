@@ -64,7 +64,6 @@ function App() {
 
   return (
     <>
-      {/* <script src="https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js"></script> */}
       <main className="
       relative 
       min-h-screen

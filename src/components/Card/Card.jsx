@@ -12,8 +12,10 @@ function Card({ title, className, children }) {
         rounded 
         backdrop-blur-md 
         text-sm 
-        border-2 
+        border-0 
         bg-sky-50 
+        inset-shadow-lg
+        inset-shadow-indigo-400/20
         dark:bg-gray-800
         dark:text-indigo-100
         border-indigo-300/30
