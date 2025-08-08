@@ -7,9 +7,11 @@ import Waves from './components/Waves/Waves.jsx'
 import AboutMe from './pages/AboutMe/AboutMe.jsx'
 import Skills from './pages/Skills/Skills.jsx'
 import Projects from './pages/Projects/Projects.jsx'
+import Contacts from './pages/Contacts/Contacts.jsx'
 
 import Logo from './components/Logo/Logo.jsx'
 import './font.css'
+import './App.css'
 function App() {
 
   // THEME [Dark mode | Light Mode]
@@ -74,6 +76,7 @@ function App() {
       bg-gradient-to-b dark:from-zinc-900 dark:to-indigo-900 
       from-sky-200 to-white
       dark:text-sky-50 text-zinc-900
+      ease-linear duration-300
       ">
         <div className="dark-mode-switch w-full absolute">
           <div className="flex justify-center">
@@ -101,23 +104,10 @@ function App() {
             <p className='lg:text-lg font-semibold'>Welcome to my page!</p>
             <p className="lg:text-lg text-gray-500">i try to do stuff, tinker with computers, web dev, play games</p>
           </div>
-
-          <div className="about-me">
-            <AboutMe />
-          </div>
-
-          <div className="skills">
-            <Skills />
-          </div>
-
-          <div className="projects">
-            Project Section
-            <Projects />
-          </div>
-
-          <div className="projects">
-            Contacts Section
-          </div>
+          <AboutMe />
+          <Skills />
+          <Projects />
+          <Contacts />
         </Slider>
 
         {/* Water footer */}

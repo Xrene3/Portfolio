@@ -1,7 +1,46 @@
 #nightSky {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+
+  .logo-container::before, 
+  .logo-container::after{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 25% 0 25% 0 ;
+      border-color: transparent;
   }
 
-  
+  .logo-container::before{
+      top:-2px;
+      left:-2px;
+      border-width: 0;
+      border-color: transparent;
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+  }
+
+  .logo-container::after{
+      right:-2px;
+      bottom:-2px;
+      border-width: 0;
+      border-color: transparent;
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+  }
+
+  .logo-container:hover::before, 
+  .logo-container:hover::after{
+      border-color: rgba(252, 133, 104, 0.8);
+  }
+
+
+  .dark .logo-container:hover::before, 
+  .dark .logo-container:hover::after{
+      border-color: #d9f99d;
+  }
+}

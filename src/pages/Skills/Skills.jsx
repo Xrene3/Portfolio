@@ -4,26 +4,25 @@ import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
 const soundUrl = "/Portfolio/sounds/sfx/minecraft_item_pickup.mp3"
 const icons = [
-    'html',
-    'css',
-    'javascript',
-    'php',
-    'mysql',
-    'bootstrap',
-    'jquery',
-    'tailwind',
-    'alpinejs',
-    'laravel',
-    'livewire',
-    'react',
-    'firebase'
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'PHP',
+    'MySQL',
+    'Bootstrap',
+    'jQuery',
+    'Tailwind CSS',
+    'Alpine.js',
+    'Laravel',
+    'Livewire',
+    'React',
+    'Firebase'
 ]
 export default function Skills() {
     //Minecraft exp sfx config
     // const maxPlaybackRate = 1.1;
     // const minPlaybackRate = 0.7;
     // const step = 0.05;
-
 
     const maxPlaybackRate = 1;
     const minPlaybackRate = 0.4;
@@ -61,25 +60,26 @@ export default function Skills() {
                                             key={index}
                                             onMouseEnter={() => { setIsHovering(true); playSfx(); }}
                                             onMouseLeave={() => { setIsHovering(false); }}
-
                                             className="
                                                 relative
                                                 logo-container
                                                 flex flex-col items-center
                                                 md:w-25 md:h-25  w-20 h-20
-                                                align-center
                                                 justify-center
                                                 p-3
                                                 border-1
-                                                bg-sky-50 dark:bg-gray-700
+                                                bg-sky-50 dark:bg-neutral-400/20
                                                 text-zinc-600 dark:text-indigo-100
-                                                border-indigo-300/0
+                                                border-indigo-300/20
                                                 rounded-sm 
-                                                shadow-md
-                                                hover:scale-105
-                                                pointer ease-in-out duration-150
+                                                
+                                                shadow-md/20
+                                                md:hover:shadow-md/30
+                                                md:hover:scale-110
+                                                md:hover:rotate-2
+                                                cursor-default ease-in-out duration-150
                                                 ">
-                                            <Logo logo={iconName} />
+                                            <Logo logo={iconName} size="45" />
                                             <span className="lg:text-md text-xs mt-2 capitalize align-bottom">{iconName}</span>
                                         </div>
                                     ))}
