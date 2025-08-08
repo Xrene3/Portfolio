@@ -32,18 +32,20 @@ export default function ProjectCard({ project, children }) {
                 >
                     <p className="text-neutral-600 dark:text-gray-400">
                         {project.description && project.description}
-                        <div className="image-container flex flex-col gap-2.5 overflow-auto max-h-70">
-                            {project.images && project.images.map((img, i) => (
-                                <img key={i} src={img} alt={`${img} screenshot ${i + 1}`} />
-                            ))}
-                        </div>
+
                     </p>
+                    <div className="image-container flex flex-col gap-2.5 overflow-auto max-h-70">
+                        {project.images && project.images.map((img, i) => (
+                            <img key={i} src={img} alt={`${img} screenshot ${i + 1}`} />
+                        ))}
+                    </div>
                 </div>
                 <div className="border-zinc-400 border-1 my-2.5"></div>
 
                 <div className="technologies flex  flex-wrap gap-2.5 justify-center">
                     {project.technologies && project.technologies.map((icon, index) => (
                         <div
+                            key={index}
                             className="
                             text-zinc-600 dark:text-indigo-100 
                             p-2 relative flex flex-row items-center">

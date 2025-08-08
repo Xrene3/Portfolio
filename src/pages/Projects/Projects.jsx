@@ -39,7 +39,7 @@ export default function Projects() {
         <>
             <div className="flex xl:flex-row flex-col justify-center gap-x-5">
                 {projects.map((project, index) => (
-                    <ProjectCard project={project} >
+                    <ProjectCard key={index} project={project} >
 
                     </ProjectCard>
                 ))}
