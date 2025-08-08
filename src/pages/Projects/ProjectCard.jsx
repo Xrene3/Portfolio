@@ -30,10 +30,10 @@ export default function ProjectCard({ project, children }) {
                     className="description overflow-hidden transition-[max-height] duration-300 ease-in-out"
                     style={{ maxHeight: "50px" }}
                 >
-                    <p className="text-neutral-600 dark:text-gray-400">
+                    <div className="text-neutral-600 dark:text-gray-400">
                         {project.description && project.description}
 
-                    </p>
+                    </div>
                     <div className="image-container flex flex-col gap-2.5 overflow-auto max-h-70">
                         {project.images && project.images.map((img, i) => (
                             <img key={i} src={img} alt={`${img} screenshot ${i + 1}`} />

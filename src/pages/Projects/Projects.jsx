@@ -5,7 +5,11 @@ import ProjectCard from './ProjectCard.jsx'
 const projects = [
     {
         name: 'Barangay Management Information System',
-        description: "The first iteration of the app finished, while its served its purpose early on, after 2-3 months of continues usage it starts to show its limitation when it comes to scalability especially since it uses Firebase RTDB which has a badnwidth limitation per month, although Firebase offers subscription options to handle higher usage, the costs quickly became unsustainable as the app grew",
+        description: <p>
+            The first version of the app was completed and served its purpose well in the early stages. However, after 2–3 months of continuous usage, scalability issues started to emerge. This was mainly due to the use of Firebase Realtime Database, which imposes monthly bandwidth limits. While Firebase offers subscription plans to support higher traffic, the costs quickly became unsustainable as the app grew.
+            <br /> <br />
+            To overcome these limitations, v2 was developed with a new tech stack built for scalability, performance, and flexibility. The backend was rebuilt using MySQL, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs. v2 not only supports a growing user base more efficiently but also provides a more maintainable and future-proof foundation for new features and improvements.
+        </p>,
         technologies: [
             'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire'
         ],
@@ -21,7 +25,7 @@ const projects = [
     },
     {
         name: 'This portfolio!',
-        description: 'My first react app',
+        description: <p>My first react app</p>,
         technologies: [
             'React', 'Tailwind CSS'
         ],
