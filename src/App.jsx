@@ -85,7 +85,7 @@ function App() {
       dark:text-sky-50 text-zinc-900
       ease-linear duration-300
       ">
-        <div className="top-0 m-0 dark-mode-switch w-full absolute">
+        <div className="top-0 m-0 dark-mode-switch w-full relative">
           <div className="flex justify-center">
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
