@@ -21,7 +21,7 @@ export default function Contacts() {
         <>
             <div className="flex flex-wrap justify-center gap-4.5 w-full">
                 {contactList && contactList.map((contact, index) => (
-                    <ContactCard contact={contact} />
+                    <ContactCard key={'contacts_' + index} contact={contact} />
                 ))}
             </div>
         </>

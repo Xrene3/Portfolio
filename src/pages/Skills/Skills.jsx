@@ -43,24 +43,23 @@ export default function Skills() {
 
     return (
         <>
-            <div>
-                <div className="skills">
-                    Skills
-                    <div className="flex lg:flex-row flex-col justify-between gap-x-5">
-                        <div className="lg:w-1/3">
-                            <Card title="Personal Skills">
+            <div className="flex-col">
+                <h1 className="text-xl my-3 text-center">Skills</h1>
+                <div className="flex lg:flex-row flex-col justify-between gap-x-5">
+                    <div className="lg:w-1/3">
+                        <Card title="Personal Skills">
 
-                            </Card>
-                        </div>
-                        <div className="lg:w-2/3">
-                            <Card title="Technologies I've used">
-                                <div className="flex flex-wrap justify-center gap-4" >
-                                    {icons.map((iconName, index) => (
-                                        <div
-                                            key={index}
-                                            onMouseEnter={() => { setIsHovering(true); playSfx(); }}
-                                            onMouseLeave={() => { setIsHovering(false); }}
-                                            className="
+                        </Card>
+                    </div>
+                    <div className="lg:w-2/3">
+                        <Card title="Technologies I've used">
+                            <div className="flex flex-wrap justify-center gap-4" >
+                                {icons.map((iconName, index) => (
+                                    <div
+                                        key={index}
+                                        onMouseEnter={() => { setIsHovering(true); playSfx(); }}
+                                        onMouseLeave={() => { setIsHovering(false); }}
+                                        className="
                                                 relative
                                                 logo-container
                                                 flex flex-col items-center
@@ -79,15 +78,14 @@ export default function Skills() {
                                                 md:hover:rotate-2
                                                 cursor-default ease-in-out duration-150
                                                 ">
-                                            <Logo logo={iconName} size="45" />
-                                            <span className="lg:text-md text-xs mt-2 capitalize align-bottom">{iconName}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </Card>
-                        </div>
+                                        <Logo logo={iconName} size="45" />
+                                        <span className="lg:text-md text-xs mt-2 capitalize align-bottom">{iconName}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
                     </div>
-                </div >
+                </div>
             </div >
         </>
     )

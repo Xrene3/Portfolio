@@ -72,22 +72,25 @@ export default function Projects() {
     }
     return (
         <>
-            <div className="flex xl:flex-row flex-col justify-center gap-x-5">
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} project={project}>
-                        <div className='absolute bottom-0 right-0 p-5'>
-                            <button onClick={() => openModal(project)}>ShowMore</button>
-                        </div>
-                    </ProjectCard>
-                ))}
+            <div className="flex-col">
+                <h1 className="text-xl my-3 text-center">Projects</h1>
+                <div className="flex xl:flex-row flex-col justify-center gap-x-5">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} project={project}>
+                            <div className='absolute bottom-0 right-0 p-5'>
+                                <button onClick={() => openModal(project)}>ShowMore</button>
+                            </div>
+                        </ProjectCard>
+                    ))}
+                </div>
+
+                <Modal
+                    isOpen={isOpen}
+                    onClose={closeModal}
+                    project={selectedProject}  >
+                    {/* CREATE A NEW COMPONENT PorjectModal.jsx */}
+                </Modal>
             </div>
-
-            <Modal
-                isOpen={isOpen}
-                onClose={closeModal}
-                project={selectedProject}  >
-
-            </Modal>
         </>
     )
 }

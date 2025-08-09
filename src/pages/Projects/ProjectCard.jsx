@@ -24,6 +24,7 @@ export default function ProjectCard({ project, children }) {
                     <div className="technologies flex  flex-wrap gap-2.5 justify-center md:text-md text-xs font-semibold">
                         {project.technologies && project.technologies.map((icon, index) => (
                             <div
+                                key={project.name + '_technology_' + index}
                                 className="
                                 text-zinc-600 dark:text-indigo-100
                                 p-2 relative flex flex-row items-center">

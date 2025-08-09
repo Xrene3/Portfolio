@@ -67,6 +67,13 @@ function App() {
     // return () => clearTimeout(timer);
   };
 
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <>
       <main className="
@@ -78,7 +85,7 @@ function App() {
       dark:text-sky-50 text-zinc-900
       ease-linear duration-300
       ">
-        <div className="dark-mode-switch w-full absolute">
+        <div className="fixed sticky top-0 m-0 dark-mode-switch w-full absolute">
           <div className="flex justify-center">
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
@@ -94,15 +101,17 @@ function App() {
         </div>
 
         {/* Main body / Content */}
-        <Slider page={page} setPage={setPage} navigating={navigating}>
-          <div className="Introduction m-4">
-            <h1
-              className='xl:text-5xl lg:text-4xl md:text-3xl text-2xl'>Hello! i'm
-              <p className='lg:textl-2xl text-amber-500 dark:text-lime-200 font-semibold'> Ryan Clark Geneveo</p>
-            </h1>
-            <br />
-            <p className='lg:text-lg font-semibold'>Welcome to my page!</p>
-            <p className="lg:text-lg text-gray-500">i try to do stuff, tinker with computers, web dev, play games</p>
+        <Slider page={page} setPage={setPage} navigating={navigating} isMobile={isMobile}>
+          <div className="Introduction w-full min-h-90 flex items-center">
+            <div className='p-2.5'>
+              <h1
+                className='xl:text-5xl lg:text-4xl md:text-3xl text-2xl'>Hello! i'm
+                <p className='lg:textl-2xl text-amber-500 dark:text-lime-200 font-semibold'> Ryan Clark Geneveo</p>
+              </h1>
+              <br />
+              <p className='lg:text-lg font-semibold'>Welcome to my page!</p>
+              <p className="lg:text-lg text-gray-500">i try to do stuff, tinker with computers, web dev, play games</p>
+            </div>
           </div>
           <AboutMe />
           <Skills />
