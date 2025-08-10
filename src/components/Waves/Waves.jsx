@@ -15,7 +15,7 @@ function Wavify({ isWaving, setWave, theme }) {
     }, [isWaving])
     return (
         <>
-            <div className="waveContainer dark:opacity-70 z-0 transiiton ease-linear duration-100">
+            <div className="waveContainer dark:opacity-60 z-0 transiiton ease-linear duration-100">
                 <Wave
                     className="wave z-1"
                     fill={theme == 'dark' ? '#c5baf5' : '#9DECE6'}
@@ -56,7 +56,7 @@ function Wavify({ isWaving, setWave, theme }) {
 
                 <Wave
                     className="wave z-4"
-                    fill={theme == 'dark' ? '#1b062bde' : '#1F4168'}
+                    fill={theme == 'dark' ? '#1b062bff' : '#1F4168'}
                     paused={isWaving}
                     style={{ display: '' }}
                     options={{

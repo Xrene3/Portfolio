@@ -1,6 +1,6 @@
 import './Logo.css'
 
-export default function Logo({ logo, className, size = 42, label, color }) {
+export default function Logo({ logo, className, size = 'auto', label, color }) {
     const iconUrl = `/Portfolio/images/icons/${logo}.svg`;
     return (
         <>

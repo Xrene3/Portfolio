@@ -7,9 +7,8 @@ function Card({ title, className, children }) {
                 card 
                 p-8 
                 rounded 
-                backdrop-blur-md 
+                backdrop-blur-xs 
                 text-sm 
-                bg-sky-50 
 
                 drop-shadow-md/30
                 
@@ -19,9 +18,13 @@ function Card({ title, className, children }) {
                 border-b-1
                 border-b-zinc-800/40
 
-                dark:bg-gray-800
+                bg-white/80
+                dark:bg-gray-800/80
                 dark:text-indigo-100
                 border-indigo-300/30
+
+                border-1
+                border-zinc-700/50
                 overflow-hidden
                 ${className}`}>
             {title && <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-3">{title}</h3>}

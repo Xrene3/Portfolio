@@ -15,8 +15,10 @@ const icons = [
     'Alpine.js',
     'Laravel',
     'Livewire',
+    'Firebase',
+    'DaisyUI',
     'React',
-    'Firebase'
+
 ]
 export default function Skills() {
     //Minecraft exp sfx config
@@ -46,12 +48,12 @@ export default function Skills() {
             <div className="flex-col">
                 <h1 className="text-xl my-3 text-center">Skills</h1>
                 <div className="flex lg:flex-row flex-col justify-between gap-5">
-                    <div className="lg:w-1/3">
+                    {/* <div className="lg:w-1/3">
                         <Card title="Personal Skills">
 
                         </Card>
-                    </div>
-                    <div className="lg:w-2/3">
+                    </div> */}
+                    <div className="w-full">
                         <Card title="Technologies I've used">
                             <div className="flex flex-wrap justify-center gap-4" >
                                 {icons.map((iconName, index) => (
@@ -63,11 +65,16 @@ export default function Skills() {
                                                 relative
                                                 logo-container
                                                 flex flex-col items-center
-                                                md:w-25 md:h-25  w-20 h-20
+
+
+                                                md:w-25 md:h-25  
+                                                w-20 h-20
+
                                                 justify-center
-                                                p-3
+                                                lg:p-6
+                                                p-5
                                                 border-1
-                                                bg-sky-50 dark:bg-neutral-400/20
+                                                bg-sky-50/20 dark:bg-neutral-400/20
                                                 text-zinc-600 dark:text-indigo-100
                                                 border-indigo-300/20
                                                 rounded-sm 
@@ -78,7 +85,7 @@ export default function Skills() {
                                                 md:hover:rotate-2
                                                 cursor-default ease-in-out duration-150
                                                 ">
-                                        <Logo logo={iconName} size="45" />
+                                        <Logo logo={iconName} />
                                         <span className="lg:text-md text-xs mt-2 capitalize align-bottom font-semibold">{iconName}</span>
                                     </div>
                                 ))}

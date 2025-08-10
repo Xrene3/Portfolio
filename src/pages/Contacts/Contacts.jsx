@@ -19,7 +19,7 @@ const contactList = [
 export default function Contacts() {
     return (
         <>
-            <div className="contacts md:w-2/3">
+            <div className="contacts">
                 <h1 className="text-lg text-center w-full">
                     Contacts
                 </h1>
