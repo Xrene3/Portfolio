@@ -19,10 +19,15 @@ const contactList = [
 export default function Contacts() {
     return (
         <>
-            <div className="flex flex-wrap justify-center gap-4.5 w-full">
-                {contactList && contactList.map((contact, index) => (
-                    <ContactCard key={'contacts_' + index} contact={contact} />
-                ))}
+            <div className="contacts md:w-2/3">
+                <h1 className="text-lg text-center w-full">
+                    Contacts
+                </h1>
+                <div className="flex flex-row justify-center gap-4.5 w-full">
+                    {contactList && contactList.map((contact, index) => (
+                        <ContactCard key={'contacts_' + index} contact={contact} />
+                    ))}
+                </div>
             </div>
         </>
     )

@@ -42,7 +42,7 @@ function Wavify({ waveMultiplier, isWaving, setWave }) {
                         points: 3
                     }}
                 />
-
+                <Bottle></Bottle>
                 <Wave
                     className="wave"
                     fill='#006995'
@@ -68,6 +68,7 @@ function Wavify({ waveMultiplier, isWaving, setWave }) {
                         points: 5
                     }}
                 />
+
                 {/* <p className="bottom-0 absolute w-full text-center secretMessage text-white italic font-bold">Deputa</p> */}
             </div>
         </>

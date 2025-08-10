@@ -3,10 +3,9 @@ import Logo from '../../components/Logo/Logo.jsx'
 export default function ContactCard({ contact }) {
     return (
         <>
-            <a href={contact.link && contact.link} target="_blank">
+            <a href={contact.link && contact.link} target="_blank" className="w-full ">
                 <Card className={`
                     flex flex-col justify-center gap-2.5 items-center
-                    !p-0 w-80 h-40
                     hover:text-orange-400
                     md:hover:rotate-3 md:hover:scale-105 ease-linear duration-100
                     `}>

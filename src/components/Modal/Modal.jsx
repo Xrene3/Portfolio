@@ -8,7 +8,7 @@ export default function Modal({ isOpen, onClose, project, children }) {
     return createPortal(
         <>
             <div className="fixed inset-0 z-100 flex items-center justify-center bg-neutral-400/70">
-                <Card className="p-4 rounded-lg shadow-lg relative lg:max-h-120 h-auto md:max-w-240 w-full">
+                <Card className="p-4 rounded-lg shadow-lg relative ">
 
                     <button
                         onClick={onClose}

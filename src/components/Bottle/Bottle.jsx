@@ -1,8 +1,7 @@
+import BottleImage from '../../assets/images/bottle.webp'
 
-function Bottle(rotationDeg, children) {
+export default function Bottle(rotationDeg, children, page, setPage) {
     return (
-        <img src={Bottle} alt="Bottle" className="w-50 absolute bottle" />
+        <img src={BottleImage} alt="Bottle" className="w-50 absolute bottle" />
     )
 }
-
-export default Bottle;

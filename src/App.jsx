@@ -12,6 +12,8 @@ import Contacts from './pages/Contacts/Contacts.jsx'
 import Logo from './components/Logo/Logo.jsx'
 import './font.css'
 import './App.css'
+
+import { FaMoon, FaPause, FaPlay, FaSun } from 'react-icons/fa'
 function App() {
 
   // THEME [Dark mode | Light Mode]
@@ -86,16 +88,16 @@ function App() {
       ease-linear duration-300
       ">
         <div className="top-0 m-0 dark-mode-switch w-full relative">
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-3">
             <button
-              className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded"
+              className=""
               onClick={toggleTheme}>
-              Toggle Dark Mode
+              {theme == 'dark' ? <FaSun>Toggle Light Mode</FaSun> : <FaMoon>Toggle Darkmode </FaMoon>}
               {/* <p>{waveMultiplier}</p> */}
             </button>
 
-            <button className="text-white text-italic" onClick={() => setWave(prev => !prev)}>
-              {isWaving ? <h1>Unpause</h1> : <h1>Pause</h1>}
+            <button className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded" onClick={() => setWave(prev => !prev)}>
+              {isWaving ? <FaPlay>Unpause wave</FaPlay> : <FaPause>Pause wave</FaPause>}
             </button>
           </div>
         </div>
