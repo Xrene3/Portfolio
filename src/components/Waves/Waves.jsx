@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Wave from 'react-wavify'
 import './Waves.css'
 import Bottle from '../Bottle/Bottle.jsx'
-function Wavify({ waveMultiplier, isWaving, setWave }) {
+function Wavify({ isWaving, setWave, theme }) {
     useEffect(() => {
         const localWaveStatus = localStorage.getItem('waveStatus');
         if (localWaveStatus === 'active') {
@@ -15,56 +15,54 @@ function Wavify({ waveMultiplier, isWaving, setWave }) {
     }, [isWaving])
     return (
         <>
-
-            <div className="waveContainer z-0">
+            <div className="waveContainer dark:opacity-70 z-0 transiiton ease-linear duration-100">
                 <Wave
-                    className="wave"
-                    fill='#9DECE6'
+                    className="wave z-1"
+                    fill={theme == 'dark' ? '#c5baf5' : '#9DECE6'}
                     paused={isWaving}
                     style={{ display: 'flex' }}
                     options={{
                         height: 10,
                         amplitude: 25,
-                        speed: 0.15 * waveMultiplier,
+                        speed: 0.15,
+                        points: 3
+                    }}
+                />
+                <Wave
+                    className="wave z-2"
+                    fill={theme == 'dark' ? '#a473e6' : '#4BC7CE'}
+                    paused={isWaving}
+                    style={{ display: 'flex' }}
+                    options={{
+                        height: 20,
+                        amplitude: 25,
+                        speed: 0.15,
                         points: 3
                     }}
                 />
 
                 <Wave
-                    className="wave"
-                    fill='#4BC7CE'
-                    paused={isWaving}
-                    style={{ display: 'flex' }}
-                    options={{
-                        height: 20,
-                        amplitude: 27,
-                        speed: 0.15 * waveMultiplier,
-                        points: 3
-                    }}
-                />
-                <Bottle></Bottle>
-                <Wave
-                    className="wave"
-                    fill='#006995'
+                    className="wave z-3"
+                    fill={theme == 'dark' ? '#612097' : '#006995'}
                     paused={isWaving}
                     style={{ display: '' }}
                     options={{
                         height: 70,
                         amplitude: 20,
-                        speed: 0.25 * waveMultiplier,
+                        speed: 0.25,
                         points: 4
                     }}
                 />
 
                 <Wave
-                    className="wave"
-                    fill='#1F4168'
+                    className="wave z-4"
+                    fill={theme == 'dark' ? '#1b062bde' : '#1F4168'}
                     paused={isWaving}
                     style={{ display: '' }}
                     options={{
                         height: 120,
                         amplitude: 30,
-                        speed: 0.2 * waveMultiplier,
+                        speed: 0.2,
                         points: 5
                     }}
                 />

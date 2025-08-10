@@ -14,11 +14,10 @@ const projects = [
                 </p>
                 <p>Aimed to enhance</p>
             </div>,
-        description: <p>
-            The first version of the app was completed and served its purpose well in the early stages. However, after 2–3 months of continuous usage, scalability issues started to emerge. This was mainly due to the use of Firebase Realtime Database, which imposes monthly bandwidth limits. While Firebase offers subscription plans to support higher traffic, the costs quickly became unsustainable as the app grew.
-            <br /> <br />
-            To overcome these limitations, v2 was developed with a new tech stack built for scalability, performance, and flexibility. The backend was rebuilt using MySQL, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs. v2 not only supports a growing user base more efficiently but also provides a more maintainable and future-proof foundation for new features and improvements.
-        </p>,
+        description:
+            <p>
+
+            </p>,
         technologies: [
             'Bootstrap', 'Laravel', 'jQuery', 'Firebase'
         ],

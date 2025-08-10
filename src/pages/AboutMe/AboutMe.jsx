@@ -3,7 +3,7 @@ import './AboutMe.css'
 function AboutMe() {
     return (
         <>
-            <div className="flex gap-x-2.5 lg:flex-row flex-col justify-center">
+            <div className="flex gap-5 lg:flex-row flex-col justify-center">
                 {/* <div className="about-me xl:w-2/3"> */}
                 <Card title='About me'>
                     <div>

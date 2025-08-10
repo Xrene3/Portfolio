@@ -45,7 +45,7 @@ export default function Skills() {
         <>
             <div className="flex-col">
                 <h1 className="text-xl my-3 text-center">Skills</h1>
-                <div className="flex lg:flex-row flex-col justify-between gap-x-5">
+                <div className="flex lg:flex-row flex-col justify-between gap-5">
                     <div className="lg:w-1/3">
                         <Card title="Personal Skills">
 
@@ -79,7 +79,7 @@ export default function Skills() {
                                                 cursor-default ease-in-out duration-150
                                                 ">
                                         <Logo logo={iconName} size="45" />
-                                        <span className="lg:text-md text-xs mt-2 capitalize align-bottom">{iconName}</span>
+                                        <span className="lg:text-md text-xs mt-2 capitalize align-bottom font-semibold">{iconName}</span>
                                     </div>
                                 ))}
                             </div>

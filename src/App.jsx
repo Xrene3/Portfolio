@@ -1,4 +1,7 @@
 import { useEffect, useState, useLayoutEffect } from 'react'
+import { useTheme } from './hooks/useTheme.js'
+import { useMobile } from './hooks/useMobile.js'
+
 import Header from './components/Navbar/Header.jsx'
 import Slider from './components/Slider/Slider.jsx'
 import Card from './components/Card/Card.jsx'
@@ -13,69 +16,16 @@ import Logo from './components/Logo/Logo.jsx'
 import './font.css'
 import './App.css'
 
+
+
 import { FaMoon, FaPause, FaPlay, FaSun } from 'react-icons/fa'
 function App() {
-
-  // THEME [Dark mode | Light Mode]
-  const [theme, setTheme] = useState('light');
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme' || 'light');
-    setTheme(storedTheme);
-    document.documentElement.classList.toggle('dark', storedTheme === 'dark')
-  }, [])
-  const toggleTheme = () => {
-    const currentTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(currentTheme);
-    document.documentElement.classList.toggle('dark', currentTheme === 'dark');
-    localStorage.setItem('theme', currentTheme)
-  };
-
+  const { theme, toggleTheme } = useTheme();
+  const { isMobile, setIsMobile } = useMobile();
   const [isWaving, setWave] = useState(false);
-
-  // Page | Section handler
   const [page, setPage] = useState(0);
-  const [waveMultiplier, setWaveMultiplier] = useState(1);
-
-  const navigating = () => {
-    // setWaveMultiplier(1);
-
-    // setTimeout(() => {
-    //   setWaveMultiplier(1.0085);
-    // }, 100);
-
-    // setTimeout(() => {
-    //   setWaveMultiplier(1);
-    // }, 500);
-
-    // setWaveMultiplier(1);
-    // const loopCount = 40;
-    // const interval = 10;
-    // const totalDuration = loopCount * interval;
-    // let newMultiplier = 1;
-    // for (let i = 0; i <= loopCount; i++) {
-    //   setTimeout(() => {
-    //     newMultiplier += 0.0005;
-    //     console.log(`i: ${i}, multiplier: ${newMultiplier}, time: ${Date.now()}`);
-    //     setWaveMultiplier(newMultiplier);
-    //   }, i * interval);
-    // }
-    // for (let i = 0; i <= loopCount; i++) {
-    //   setTimeout(() => {
-    //     newMultiplier -= 0.0005;
-    //     console.log(`i: ${i}, multiplier: ${newMultiplier}, time: ${Date.now()}`);
-    //     setWaveMultiplier(newMultiplier);
-    //   }, totalDuration + (i * interval));
-    // }
-    // return () => clearTimeout(timer);
-  };
 
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   return (
     <>
       <main className="
@@ -93,7 +43,6 @@ function App() {
               className=""
               onClick={toggleTheme}>
               {theme == 'dark' ? <FaSun>Toggle Light Mode</FaSun> : <FaMoon>Toggle Darkmode </FaMoon>}
-              {/* <p>{waveMultiplier}</p> */}
             </button>
 
             <button className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded" onClick={() => setWave(prev => !prev)}>
@@ -102,8 +51,7 @@ function App() {
           </div>
         </div>
 
-        {/* Main body / Content */}
-        <Slider page={page} setPage={setPage} navigating={navigating} isMobile={isMobile}>
+        <Slider page={page} setPage={setPage} isMobile={isMobile}>
           <div className="Introduction w-full min-h-90 flex items-center">
             <div className='p-2.5'>
               <h1
@@ -122,7 +70,7 @@ function App() {
         </Slider>
 
         {/* Water footer */}
-        <Waves waveMultiplier={waveMultiplier} isWaving={isWaving} setWave={setWave} />
+        <Waves isWaving={isWaving} isMobile={isMobile} theme={theme} />
       </main >
     </>
   )

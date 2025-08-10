@@ -6,7 +6,6 @@ function Card({ title, className, children }) {
             {`
                 card 
                 p-8 
-                m-1.5 
                 rounded 
                 backdrop-blur-md 
                 text-sm 
@@ -25,7 +24,7 @@ function Card({ title, className, children }) {
                 border-indigo-300/30
                 overflow-hidden
                 ${className}`}>
-            {title && <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-3 w-full">{title}</h3>}
+            {title && <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-3">{title}</h3>}
             {children}
         </div>
     )

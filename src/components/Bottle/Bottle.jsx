@@ -1,7 +1,8 @@
 import BottleImage from '../../assets/images/bottle.webp'
-
-export default function Bottle(rotationDeg, children, page, setPage) {
+import './Bottle.css'
+export default function Bottle({ rotation, children, page, setPage, className }) {
+    const rotate = 'rotate-' + rotation;
     return (
-        <img src={BottleImage} alt="Bottle" className="w-50 absolute bottle" />
+        <img src={BottleImage} alt="Bottle" className={`drop-shadow-lg drop-shadow-transparent hover:drop-shadow-yellow-100 w-50 absolute bottle ${className}`} />
     )
 }

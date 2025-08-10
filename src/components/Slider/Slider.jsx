@@ -1,15 +1,13 @@
 import { useState } from 'react';
 
-export default function Slider({ children, page, setPage, navigating, isMobile }) {
+export default function Slider({ children, page, setPage, isMobile }) {
     const totalPages = children.length || 0;
     const nextSlide = () => {
         setPage(prev => (prev < totalPages - 1 ? prev + 1 : prev));
-        navigating();
     }
 
     const prevSlide = () => {
         setPage(prev => (prev > 0 ? prev - 1 : prev));
-        navigating();
     }
 
     return (
@@ -22,7 +20,7 @@ export default function Slider({ children, page, setPage, navigating, isMobile }
                 </div>
 
                 :
-                <div className="flex justify-between w-screen">
+                <div className="flex justify-between">
                     <div className={`${page < 1 ? 'hidden' : ''} absolute md:top-1/2 left-0 z-70 md:me-5`}>
                         <button
                             onClick={prevSlide}
@@ -32,7 +30,7 @@ export default function Slider({ children, page, setPage, navigating, isMobile }
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex justify-center mt-30 w-full h-full z-50 p-4 md:px-30">
+                    <div className="flex justify-center mt-30 w-full h-full z-50 md:px-30">
                         {/* <div className="max-w-2xl w-full px-4 z-10"> */}
                         {Array.isArray(children) ? children[page] : children}
                         {/* </div> */}
