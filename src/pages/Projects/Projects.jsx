@@ -123,7 +123,6 @@ export default function Projects({ isOpen, setIsOpen, closeModal }) {
                     isOpen={isOpen}
                     closeModal={closeProjectModal}
                     project={selectedProject}>
-                    Data shit
                 </ProjectModal>
 
             </div>
