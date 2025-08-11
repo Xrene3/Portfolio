@@ -1,6 +1,7 @@
 import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
 import ProjectCard from './ProjectCard.jsx'
+import ProjectModal from './ProjectModal.jsx'
 import Modal from '../../components/Modal/Modal.jsx'
 import { useState } from 'react';
 
@@ -43,6 +44,11 @@ const projects = [
                                 <li>Customizable layout per barangay</li>
                                 <li>Issue and record generated certificate</li>
                             </ul>
+                            <li className="font-semibold">User Accounts</li>
+                            <ul className="list-disc ms-5">
+                                <li>Create and delete user accounts</li>
+                                <li>Access based on user type</li>
+                            </ul>
                             <li className="font-semibold">Analytics</li>
                         </ol>
                     </div>
@@ -79,7 +85,7 @@ const projects = [
     {
         name: 'This portfolio!',
         summary: 'My First React App!',
-        description: <p>Description goes here</p>,
+        description: <p>Not much to put here, it is the website you're lookin at right now</p>,
         technologies: [
             'React', 'Tailwind CSS'
         ],
@@ -89,37 +95,37 @@ const projects = [
     },
 ];
 
-export default function Projects() {
-
-    const [isOpen, setIsOpen] = useState(false);
+export default function Projects({ isOpen, setIsOpen, closeModal }) {
     const [selectedProject, setSelectedProject] = useState(null);
-
-    const openModal = (project) => {
+    const openProjectModal = (project) => {
         setSelectedProject(project);
         setIsOpen(true);
     }
-    const closeModal = () => {
+
+    const closeProjectModal = () => {
         setSelectedProject(null);
-        setIsOpen(false);
+        setIsOpen(true);
     }
+
     return (
         <>
             <div className="flex-col">
                 <h1 className="text-xl my-3 text-center">Projects</h1>
                 <div className="flex flex-col lg:flex-row lg:flex-wrap  justify-center gap-5">
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} openModal={openModal}>
+                        <ProjectCard key={index} project={project} openProjectModal={openProjectModal} >
 
                         </ProjectCard>
                     ))}
                 </div>
 
-                <Modal
+                <ProjectModal
                     isOpen={isOpen}
-                    onClose={closeModal}
-                    project={selectedProject}  >
-                    {/* CREATE A NEW COMPONENT PorjectModal.jsx */}
-                </Modal>
+                    closeModal={closeProjectModal}
+                    project={selectedProject}>
+                    Data shit
+                </ProjectModal>
+
             </div>
         </>
     )

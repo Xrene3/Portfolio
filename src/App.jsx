@@ -1,6 +1,7 @@
 import { useEffect, useState, useLayoutEffect } from 'react'
 import { useTheme } from './hooks/useTheme.js'
 import { useMobile } from './hooks/useMobile.js'
+import { useModal } from './hooks/useModal.js'
 
 import Header from './components/Navbar/Header.jsx'
 import Slider from './components/Slider/Slider.jsx'
@@ -23,6 +24,7 @@ import { FaMoon, FaPause, FaPlay, FaSun } from 'react-icons/fa'
 function App() {
   const { theme, toggleTheme } = useTheme();
   const { isMobile, setIsMobile } = useMobile();
+  const { isOpen, setIsOpen } = useModal();
   const [isWaving, setWave] = useState(false);
   const [page, setPage] = useState(0);
 
@@ -55,7 +57,7 @@ function App() {
           <Welcome />
           <AboutMe />
           <Skills />
-          <Projects />
+          <Projects isOpen={isOpen} setIsOpen={setIsOpen} />
           <Contacts />
         </Slider>
 

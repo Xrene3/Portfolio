@@ -1,7 +1,7 @@
 import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
 
-export default function ProjectCard({ project, children, openModal }) {
+export default function ProjectCard({ project, children, openModal, openProjectModal }) {
     return (
         <>
             <Card title={project.name && project.name} className="w-full 2xl:w-120 xl:w-100 md:hover:rotate-1 ease-linear duration-100">
@@ -39,7 +39,7 @@ export default function ProjectCard({ project, children, openModal }) {
                     {children}
                 </div>
                 <div className='absolute bottom-0 right-0 p-5'>
-                    <button className="transition ease-linear duration-300  dark:hover:text-lime-200 py-2 px-5 hover:bg-neutral-600/20 rounded-full" onClick={() => openModal(project)}>ShowMore</button>
+                    <button className="transition ease-linear duration-300  dark:hover:text-lime-200 py-2 px-5 hover:bg-neutral-600/20 rounded-full" onClick={() => openProjectModal(project)}>ShowMore</button>
                 </div>
             </Card >
         </>
