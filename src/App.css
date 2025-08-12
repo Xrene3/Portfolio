@@ -3,7 +3,8 @@
   height: 100vh;
   overflow: hidden;
 }
-.image-container::-webkit-scrollbar {
+.modal::-webkit-scrollbar {
+  background-color: transparent;
   display: none;
 }
 @media only screen and (min-width: 768px) {

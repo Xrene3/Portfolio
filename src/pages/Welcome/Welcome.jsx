@@ -1,8 +1,6 @@
-
-
 export default function Welcome() {
     return (
-        <div className="Introduction w-full min-h-90 flex items-center">
+        <div className="Introduction w-full flex items-center">
             <div className='p-2.5'>
                 <h1 className='xl:text-5xl lg:text-4xl md:text-3xl text-2xl'>Hello! i'm
                     <p className='lg:textl-2xl text-sky-700 dark:text-lime-200 font-bold'> Ryan Clark Geneveo</p>

@@ -20,7 +20,7 @@ export default function Slider({ children, page, setPage, isMobile }) {
                 </div>
 
                 :
-                <div className="flex justify-between">
+                <div className="flex justify-between h-full">
                     <div className={`${page < 1 ? 'hidden' : ''} fixed absolute md:top-1/2 left-0 z-70 md:me-5`}>
                         <button
                             onClick={prevSlide}
@@ -30,8 +30,8 @@ export default function Slider({ children, page, setPage, isMobile }) {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex justify-center w-full h-full z-50 md:px-30">
-                        <div className="lg:6/7 md:w-4/5  px-4 z-10">
+                    <div className="flex justify-center mt-[12vh] w-full z-50 md:px-30">
+                        <div className="lg:6/7 md:w-4/5 px-4 z-10 mt-1/2">
                             {Array.isArray(children) ? children[page] : children}
                         </div>
                     </div>

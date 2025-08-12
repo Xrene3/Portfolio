@@ -8,7 +8,7 @@ export default function Modal({ isOpen, onClose, project, children }) {
     return createPortal(
         <>
             <div className="fixed inset-0 z-100 flex items-center justify-center bg-neutral-950/30" onClick={onClose}>
-                <div className="lg:w-3/6 md:w-4/5 w-full rounded-lg shadow-lg relative overflow-hidden max-h-3/5vh" onClick={(e) => e.stopPropagation()} >
+                <div className="modal md:max-w-5/6 rounded-lg shadow-lg relative max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()} >
                     <Card  >
 
                         <button
