@@ -16,7 +16,7 @@ const contactList = [
     }
 ]
 
-export default function Contacts() {
+export default function Contacts({ setIsHoveringCard, play, stop }) {
     return (
         <>
             <div className="contacts">
@@ -25,7 +25,7 @@ export default function Contacts() {
                 </h1>
                 <div className="flex flex-row justify-center gap-4.5 w-full">
                     {contactList && contactList.map((contact, index) => (
-                        <ContactCard key={'contacts_' + index} contact={contact} />
+                        <ContactCard setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} key={'contacts_' + index} contact={contact} />
                     ))}
                 </div>
             </div>

@@ -1,14 +1,25 @@
 import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
-export default function ContactCard({ contact }) {
+export default function ContactCard({ contact, setIsHoveringCard, play, stop }) {
     return (
         <>
             <a href={contact.link && contact.link} target="_blank" className="w-full ">
-                <Card className={`
+                <Card
+                    className={`
+                    audio-on-hover
                     flex flex-col justify-center gap-2.5 items-center
                     hover:text-orange-400
-                    md:hover:rotate-3 md:hover:scale-105 ease-linear duration-100
-                    `}>
+                    md:hover:rotate-1 md:hover:scale-102 ease-linear duration-100
+                    `}
+                    onMouseEnter={() => {
+                        setIsHoveringCard(true);
+                        play();
+                    }}
+                    onMouseLeave={() => {
+                        setIsHoveringCard(false);
+                        stop();
+                    }}
+                >
                     {/* {contact.name && <h1>{contact.name}</h1>} */}
 
                     {contact.icon &&

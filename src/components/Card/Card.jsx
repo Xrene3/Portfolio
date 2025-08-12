@@ -1,6 +1,6 @@
 import './Card.css'
 
-function Card({ title, className, children }) {
+function Card({ title, className, children, ...rest }) {
     return (
         <div className=
             {`
@@ -26,7 +26,8 @@ function Card({ title, className, children }) {
                 border-1
                 border-zinc-700/50
                 overflow-hidden
-                ${className}`}>
+                ${className}`}
+            {...rest}>
             {title && <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-3">{title}</h3>}
             {children}
         </div>

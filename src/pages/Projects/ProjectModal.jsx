@@ -17,34 +17,32 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                             dark:drop-shadow-indigo-100
                             ">
                 </div>
-                <div className='text-start'>
+                <div className='text-start mt-3 max-h-[60vh] overflow-auto'>
                     <div className="flex lg:flex-row flex-col gap-5 ">
                         <div className="details lg:max-w-[35vw] ms-5 text-neutral-600 dark:text-gray-400">
                             {project?.description && project.description}
                         </div>
                         {project?.images &&
-                            <div className="image-container mx-auto max-h-[60vh] overflow-auto">
+                            <div className="image-container flex flex-col gap-y-3 mx-auto max-h-[60vh] md:overflow-auto">
                                 {project.images.map((image, index) => (
-                                    <img src={image} alt="" key={index} className='my-2.5' />
+                                    <img src={image} alt="" key={index} />
                                 ))}
                                 {/* <img src="/Portfolio/src/assets/images/Projects/onesys_v2/image1.png" alt="" /> */}
                             </div>
                         }
                     </div>
-                    <div className="border-zinc-400 border-1 my-2.5"></div>
-                    <div className="technologies flex  flex-wrap gap-2.5 justify-center overflow-auto">
-                        {project?.technologies && project.technologies.map((icon, index) => (
-                            <div className="
+                </div>
+                <div className="border-zinc-400 border-1 my-2.5"></div>
+                <div className="technologies flex  flex-wrap gap-2.5 justify-center overflow-auto">
+                    {project?.technologies && project.technologies.map((icon, index) => (
+                        <div className="
                                         text-zinc-600 dark:text-indigo-100
                                         p-2 relative flex flex-row items-center">
-                                <Logo logo={icon} size="30" />
-                                <p className='indent-1 my-auto'>{icon}</p>
-                            </div>
-                        ))}
-                    </div>
+                            <Logo logo={icon} size="30" />
+                            <p className='indent-1 my-auto md:text-md text-xs'>{icon}</p>
+                        </div>
+                    ))}
                 </div>
-
-
                 <div className="additional text-neutral-600 dark:text-neutral-100">
                     {children}
                 </div>

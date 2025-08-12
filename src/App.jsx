@@ -1,4 +1,6 @@
 import { useEffect, useState, useLayoutEffect } from 'react'
+import useSound from 'use-sound';
+
 import { useTheme } from './hooks/useTheme.js'
 import { useMobile } from './hooks/useMobile.js'
 import { useModal } from './hooks/useModal.js'
@@ -28,6 +30,9 @@ function App() {
   const [isWaving, setWave] = useState(false);
   const [page, setPage] = useState(0);
 
+  const hoverCardSfxUrl = "/Portfolio/sounds/sfx/gnome_toggled.mp3";
+  const [isHoveringCard, setIsHoveringCard] = useState(false);
+  const [play, { stop }] = useSound(hoverCardSfxUrl, { volume: 0.4 });
 
   return (
     <>
@@ -48,7 +53,7 @@ function App() {
             </button>
 
             <button className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded" onClick={() => setWave(prev => !prev)}>
-              {isWaving ? <FaPlay>Unpause wave</FaPlay> : <FaPause>Pause wave</FaPause>}
+              {isWaving ? <FaPlay></FaPlay> : <FaPause>Pause wave</FaPause>}
             </button>
           </div>
         </div>
@@ -57,8 +62,8 @@ function App() {
           <Welcome />
           <AboutMe />
           <Skills />
-          <Projects isOpen={isOpen} setIsOpen={setIsOpen} />
-          <Contacts />
+          <Projects setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Contacts setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} />
         </Slider>
 
         {/* Water footer */}

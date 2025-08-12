@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 export default function Slider({ children, page, setPage, isMobile }) {
     const totalPages = children.length || 0;
     const nextSlide = () => {
@@ -14,7 +14,7 @@ export default function Slider({ children, page, setPage, isMobile }) {
         <>
             {isMobile ?
                 <div className="flex flex-col gap-5 justify-center w-full">
-                    <div className="p-2 5 z-50">
+                    <div className="p-2 5 z-50 flex flex-col gap-y-5 mb-5">
                         {children}
                     </div>
                 </div>
@@ -24,23 +24,24 @@ export default function Slider({ children, page, setPage, isMobile }) {
                     <div className={`${page < 1 ? 'hidden' : ''} fixed absolute md:top-1/2 left-0 z-70 md:me-5`}>
                         <button
                             onClick={prevSlide}
-                            className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2">
-                            Left
+                            className="py-5 bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2">
+                            <FaArrowLeft />
                         </button>
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="flex justify-center mt-[12vh] w-full z-50 md:px-30">
-                        <div className="lg:6/7 md:w-4/5 px-4 z-10 mt-1/2">
+                    <div className="flex justify-center mt-[6vh] w-full z-50 md:px-30">
+                        <div className="lg:6/7 md:w-4/5 px-4 z-10 mt-1/2 flex flex-col gap-y-8">
                             {Array.isArray(children) ? children[page] : children}
+                            {/* {children} */}
                         </div>
                     </div>
 
                     <div className={`${page >= totalPages - 1 ? 'hidden' : ''} fixed absolute md:top-1/2 right-0 z-70 md:ms-5`}>
                         <button
                             onClick={nextSlide}
-                            className="bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2 md:ms-5">
-                            Right
+                            className="py-5 bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2 md:ms-5">
+                            <FaArrowRight />
                         </button>
                     </div>
                 </div>

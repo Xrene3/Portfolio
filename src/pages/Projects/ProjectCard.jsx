@@ -1,10 +1,19 @@
 import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
 
-export default function ProjectCard({ project, children, openModal, openProjectModal }) {
+export default function ProjectCard({ project, children, openModal, openProjectModal, setIsHoveringCard, play, stop }) {
     return (
-        <>
-            <Card title={project.name && project.name} className="w-full 2xl:w-120 xl:w-100 md:hover:rotate-1 ease-linear duration-100">
+        < >
+            <Card title={project.name && project.name} className="audio-on-hover w-full 2xl:w-120 xl:w-100 md:hover:rotate-1 ease-linear duration-100"
+                onMouseEnter={() => {
+                    setIsHoveringCard(true);
+                    play();
+                }}
+                onMouseLeave={() => {
+                    setIsHoveringCard(false);
+                    stop();
+                }}
+            >
                 <div className="
                         border-2 border-sky-300 dark:border-indigo-400
                         rounded-full
