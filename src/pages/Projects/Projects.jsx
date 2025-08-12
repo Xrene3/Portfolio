@@ -9,7 +9,7 @@ import { getProjectImages } from './useExportProjectImages.js'
 
 const onesys_v1_images = getProjectImages('onesys_v1');
 const onesys_v2_images = getProjectImages('onesys_v2');
-console.log(onesys_v2_images)
+// console.log(onesys_v2_images)
 
 const projects = [
     {
