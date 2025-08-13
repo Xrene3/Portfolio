@@ -5,6 +5,7 @@ import PaimonWah from '../../assets/images/paimon_wah.jpg'
 import Kaoruko3 from '../../assets/images/Kaoruko3.jpg'
 import KaorukoFufu from '../../assets/images/KaorukoFufu.jpg'
 import KaorukoPeace from '../../assets/images/KaorukoPeace.jpg'
+import KaorukoJump from '../../assets/images/kaoruko-jumping.gif'
 
 import { getArtImages } from './useExportArtImages.js'
 const sketchDrawings = getArtImages('Sketch');
@@ -64,25 +65,28 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                 </div>
 
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                    <div className="w-screen max-w-full md:max-w-[60vw] px-4">
-                        <h1 className="text-center text-lg md:text-2xl text-orange-500 dark:text-lime-200 mb-5">
+                    <div className="sum-stuff w-screen max-w-full p-0 md:max-w-[60vw] max-h-[80vh] overflow-auto">
+                        <h1 className="text-center text-lg md:text-2xl text-sky-700 dark:text-lime-200 font-bold mb-2 rotate-4">
                             Som extra stuf!
                         </h1>
 
-                        <div className="w-full flex justify-between">
+                        <div className="w-full flex md:flex-row flex-col-reverse md:justify-between justify-center ">
                             <div className="description dark:text-indigo-200 text-sky-700 md:w-2/3">
-                                <p className="text-lg">This website was made for me to learn React JS as well as create my very own website, where I can mess around and put random stuff that I feel like putting and also serves as an archive of the things that I've done, whether it be a project, a system, a drawing or whatever it'd be. </p>
+                                <p>There's always more to learn, and this website was made for me to learn React JS as well as create my very own website, where I can mess around and put random stuff that I feel like putting and also serves as an archive of the things that I've done, whether it be a project, a system, a drawing or whatever it'd be. </p>
                                 {/* <br /> */}
-                                <img src={KaorukoFufu} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
+                                <div className="flex md:justify-start justify-center gap-2.5">
+                                    <img src={KaorukoJump} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
+                                    <img src={KaorukoPeace} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
+                                </div>
                                 <p>Also here some of the stuff that i've drawn! </p>
 
                             </div>
-                            <div className="images">
-                                <img src={PaimonWah} alt="" className="w-54 h-54 object-cover rounded-full" />
+                            <div className="images justify-center flex py-1.5">
+                                <img src={PaimonWah} alt="" className="md:w-54 md:h-54 w-25 h-25 object-cover rounded-full" />
                             </div>
                         </div>
 
-                        <div className="drawing-image-container max-h-[70vh] overflow-auto">
+                        <div className="drawing-image-container">
                             <div className="border-zinc-400 border-1 my-2.5"></div>
                             <h1 className="text-center text-lg text-orange-500 dark:text-lime-200">Digital</h1>
                             <div className="border-zinc-400 border-1 my-2.5"></div>

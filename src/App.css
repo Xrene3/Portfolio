@@ -3,7 +3,7 @@
   height: 100vh;
   overflow: hidden;
 }
-.drawing-image-container::-webkit-scrollbar {
+.sum-stuff::-webkit-scrollbar {
   background-color: transparent;
   display: none;
 }
