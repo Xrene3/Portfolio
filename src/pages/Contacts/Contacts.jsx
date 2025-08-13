@@ -30,7 +30,7 @@ const contactList = [
         name: "ryanclarkgeneveo03@gmail.com",
         icon: "GMail",
         onClick: () => {
-            window.location.href = "mailto:someone@example.com?subject=Hello&body=This%20is%20a%20test";
+            window.location.href = "mailto:ryanclarkgeneveo03@gmail.com?";
         }
     }
 ]
