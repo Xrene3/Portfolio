@@ -79,7 +79,7 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
 
 
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                    <div className="sum-stuff w-screen max-w-full p-0 md:max-w-[60vw] max-h-[80vh] overflow-auto">
+                    <div className="sum-stuff w-screen max-w-full p-0 md:max-w-[60vw] max-h-[70vh] overflow-auto">
                         <h1 className="text-center text-lg md:text-2xl text-sky-700 dark:text-lime-200 font-bold mb-2 rotate-4">
                             Som extra stuf!
                         </h1>
