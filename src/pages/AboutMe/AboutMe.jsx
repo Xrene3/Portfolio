@@ -7,7 +7,7 @@ function AboutMe() {
                 {/* <div className="about-me xl:w-2/3"> */}
                 <Card title='About me'>
                     <div>
-                        <div className='lg:text-lg'>
+                        <div className='lg:text-lg text-md'>
                             <div className='text-justify'>
                                 <p className='indent-8'>A graduate from Cavite State University with a
                                     <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology. </span>

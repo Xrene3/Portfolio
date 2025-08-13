@@ -167,9 +167,11 @@ export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsO
 
     return (
         <>
-            <div className="flex-col py-4">
-                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">Projects</h1>
-                <div className="flex flex-col lg:flex-row lg:flex-wrap  justify-center gap-5">
+            <div className="flex-col">
+                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">
+                    Projects
+                </h1>
+                <div className="flex flex-col lg:flex-row lg:flex-wrap  justify-center gap-5 mb-4">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={index}

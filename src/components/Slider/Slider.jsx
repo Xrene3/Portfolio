@@ -34,7 +34,7 @@ export default function Slider({ children, page, setPage, isMobile }) {
 
                     {/* Main Content Area */}
                     <div className="flex justify-center mt-[6vh] w-full z-50 md:px-30">
-                        <div className="lg:6/7 md:w-4/5 px-4 z-10 mt-1/2 flex flex-col gap-y-8">
+                        <div className="2xl:w-5/7  lg:w-[80vw] md:w-4/5 px-4 z-10 mt-1/2 flex flex-col gap-y-8">
                             {Array.isArray(children) ? children[page] : children}
                             {/* {children} */}
                         </div>

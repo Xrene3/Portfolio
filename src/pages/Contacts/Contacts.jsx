@@ -11,7 +11,7 @@ import { getArtImages } from './useExportArtImages.js'
 const sketchDrawings = getArtImages('Sketch');
 const digitalDrawings = getArtImages('Digital');
 
-console.log(sketchDrawings)
+// console.log(sketchDrawings)
 import Modal from '../../components/Modal/Modal.jsx'
 const contactList = [
     {
@@ -49,19 +49,31 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                 </div>
 
                 <div
+                    onMouseEnter={() => {
+                        setIsHoveringCard(true);
+                        play();
+                    }}
+                    onMouseLeave={() => {
+                        setIsHoveringCard(false);
+                        stop();
+                    }}
+
                     onClick={() => setIsOpen(true)}
-                    className="
+                    className="relative
                         md:w-3/5 w-full mx-auto
                         drop-shadow-xl/60
                         hover:drop-shadow-indigo-300
+                        hover:cursor-pointer
                         ease-linear duration-150
-                            h-42 overflow-hidden rounded-lg mt-4
-                            flex justify-between
-                            bg-gradient-to-r from-zinc-600 via-zinc-50 to-white">
+                        h-42 overflow-hidden rounded-lg mt-4
+                        flex justify-between
+                        bg-gradient-to-r from-zinc-600 via-zinc-50 to-white">
                     <div className="message w-full flex justify-center items-center p-5">
-                        <h1 className="lg:text-4xl text-lg text-black font-semibold">Thanks for visiting!</h1>
+                        <h1 className="xl:text-4xl text-2xl text-black font-semibold">Thanks for visiting!</h1>
+
                     </div>
                     <img src={Kaoruko} alt="" className="h-full" />
+                    <p className="text-xs text-white/70 absolute bottom-5 left-5">Click me for more stuff*</p>
                 </div>
 
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>

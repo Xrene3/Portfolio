@@ -46,7 +46,9 @@ export default function Skills() {
     return (
         <>
             <div className="flex-col">
-                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">Technical Skills</h1>
+                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">
+                    Technical Skills
+                </h1>
                 <div className="flex lg:flex-row flex-col justify-between gap-5">
                     {/* <div className="lg:w-1/3">
                         <Card title="Personal Skills">
