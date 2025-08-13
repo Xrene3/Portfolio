@@ -76,6 +76,8 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                     <p className="text-xs text-white/70 absolute bottom-5 left-5">Click me for more stuff*</p>
                 </div>
 
+
+
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                     <div className="sum-stuff w-screen max-w-full p-0 md:max-w-[60vw] max-h-[80vh] overflow-auto">
                         <h1 className="text-center text-lg md:text-2xl text-sky-700 dark:text-lime-200 font-bold mb-2 rotate-4">
@@ -100,7 +102,7 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
 
                         <div className="drawing-image-container">
                             <div className="border-zinc-400 border-1 my-2.5"></div>
-                            <h1 className="text-center text-lg text-orange-500 dark:text-lime-200">Digital</h1>
+                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">Digital</h1>
                             <div className="border-zinc-400 border-1 my-2.5"></div>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 justify-center">
                                 {digitalDrawings.map((src, idx) => (
@@ -118,7 +120,7 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                             </div>
 
                             <div className="border-zinc-400 border-1 my-2.5"></div>
-                            <h1 className="text-center text-lg text-orange-500 dark:text-lime-200">Sketch</h1>
+                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">Sketch</h1>
                             <div className="border-zinc-400 border-1 my-2.5"></div>
 
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">

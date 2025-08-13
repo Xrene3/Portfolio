@@ -17,7 +17,7 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                             dark:drop-shadow-indigo-100
                             ">
                 </div>
-                <div className='text-start mt-3 max-h-[50vh] overflow-auto'>
+                <div className='project-modal-body text-start mt-3 max-h-[50vh] overflow-auto'>
                     <div className="flex lg:flex-row flex-col gap-5 ">
                         <div className="details lg:max-w-[35vw] ms-5 text-neutral-600 dark:text-gray-400">
                             {project?.description && project.description}

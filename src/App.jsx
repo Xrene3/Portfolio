@@ -26,7 +26,8 @@ import { FaMoon, FaPause, FaPlay, FaSun } from 'react-icons/fa'
 function App() {
   const { theme, toggleTheme } = useTheme();
   const { isMobile, setIsMobile } = useMobile();
-  const { isOpen, setIsOpen } = useModal();
+  const [isProjectsOpen, setProjectsOpen] = useState(false);
+  const [isContactsOpen, setContactsOpen] = useState(false);
   const [isWaving, setWave] = useState(false);
   const [page, setPage] = useState(0);
 
@@ -62,8 +63,8 @@ function App() {
           <Welcome />
           <AboutMe />
           <Skills />
-          <Projects setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isOpen} setIsOpen={setIsOpen} />
-          <Contacts setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Projects setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isProjectsOpen} setIsOpen={setProjectsOpen} />
+          <Contacts setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isContactsOpen} setIsOpen={setContactsOpen} />
         </Slider>
 
         {/* Water footer */}

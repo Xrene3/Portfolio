@@ -3,7 +3,7 @@
   height: 100vh;
   overflow: hidden;
 }
-.sum-stuff::-webkit-scrollbar {
+.sum-stuff::-webkit-scrollbar, .project-modal-body::-webkit-scrollbar {
   background-color: transparent;
   display: none;
 }
