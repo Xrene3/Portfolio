@@ -7,8 +7,8 @@ import Modal from '../../components/Modal/Modal.jsx'
 import { useState } from 'react';
 import { getProjectImages } from './useExportProjectImages.js'
 
-const onesys_v1_images = getProjectImages('onesys_v1').sort();
-const onesys_v2_images = getProjectImages('onesys_v2').sort();
+const onesys_v1_images = getProjectImages('onesys_v1');
+const onesys_v2_images = getProjectImages('onesys_v2');
 // console.log(onesys_v2_images)
 
 const projects = [
@@ -82,7 +82,7 @@ const projects = [
     },
     {
         name: 'Bayani OneSys v2 | OJT',
-        summary: 'Aimed to address the issues of the v1 and provide additional features for the end users while also making the system more developer friendly and future proof by moving to a more modern and widely adapted Tech Stack.',
+        summary: 'Aimed to address the issues of the v1 and provide additional features for the end users while also making the system more developer friendly and future proof by moving to a more modern and widely adapted Tech Stack [TALL Stack].',
         description:
             <div>
                 <p className="mb-1">
@@ -93,7 +93,7 @@ const projects = [
                 <br /> <br />
                 <p className="mb-2">To overcome these limitations, v2 was developed with a new and modern tech stack built for scalability, performance, and flexibility.</p>
                 <p className="mb-2"> The database was changed from <strong>FirebaseRTDB to MySQL</strong>, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs.</p>
-                <p className="mb-2">Additionally the new Tech Stack doesnt not only provide a more optimized system than before but also provides a more maintainable and future-proof foundation for new features and improvements.</p>
+                <p className="mb-2">Additionally the new Tech Stack does not only provide a more optimized system than before but also provides a more maintainable and future-proof foundation for new features and improvements.</p>
 
                 <div className="details mt-2.5">
                     <p className="font-bold">Some of the changes made to v2</p>
@@ -168,7 +168,7 @@ export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsO
     return (
         <>
             <div className="flex-col py-4">
-                {/* <h1 className="text-xl my-3 text-center">Projects</h1> */}
+                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">Projects</h1>
                 <div className="flex flex-col lg:flex-row lg:flex-wrap  justify-center gap-5">
                     {projects.map((project, index) => (
                         <ProjectCard

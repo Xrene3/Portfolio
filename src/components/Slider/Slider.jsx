@@ -24,7 +24,10 @@ export default function Slider({ children, page, setPage, isMobile }) {
                     <div className={`${page < 1 ? 'hidden' : ''} fixed absolute md:top-1/2 left-0 z-70 md:me-5`}>
                         <button
                             onClick={prevSlide}
-                            className="py-5 bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2">
+                            className="py-5 rounded 
+                            bg-sky-50/40 dark:bg-neutral-400/20
+                            text-zinc-600 dark:text-indigo-100 hover:text-orange-500/80 ease-linear duration-150
+                            border border-gray-400/60 shadow-lg px-4">
                             <FaArrowLeft />
                         </button>
                     </div>
@@ -40,7 +43,10 @@ export default function Slider({ children, page, setPage, isMobile }) {
                     <div className={`${page >= totalPages - 1 ? 'hidden' : ''} fixed absolute md:top-1/2 right-0 z-70 md:ms-5`}>
                         <button
                             onClick={nextSlide}
-                            className="py-5 bg-white/40 rounded border border-gray-400/60 shadow-lg text-sky-800 px-4 py-2 md:ms-5">
+                            className="py-5 rounded 
+                            bg-sky-50/40 dark:bg-neutral-400/20
+                            text-zinc-600 dark:text-indigo-100 hover:text-orange-500/80 ease-linear duration-150
+                            border border-gray-400/60 shadow-lg px-4 md:ms-5">
                             <FaArrowRight />
                         </button>
                     </div>

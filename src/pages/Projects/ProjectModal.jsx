@@ -17,7 +17,7 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                             dark:drop-shadow-indigo-100
                             ">
                 </div>
-                <div className='text-start mt-3 max-h-[60vh] overflow-auto'>
+                <div className='text-start mt-3 max-h-[50vh] overflow-auto'>
                     <div className="flex lg:flex-row flex-col gap-5 ">
                         <div className="details lg:max-w-[35vw] ms-5 text-neutral-600 dark:text-gray-400">
                             {project?.description && project.description}
@@ -35,7 +35,7 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                 <div className="border-zinc-400 border-1 my-2.5"></div>
                 <div className="technologies flex  flex-wrap gap-2.5 justify-center overflow-auto">
                     {project?.technologies && project.technologies.map((icon, index) => (
-                        <div className="
+                        <div key={index} className="
                                         text-zinc-600 dark:text-indigo-100
                                         p-2 relative flex flex-row items-center">
                             <Logo logo={icon} size="30" />

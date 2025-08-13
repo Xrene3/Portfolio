@@ -3,10 +3,10 @@
   height: 100vh;
   overflow: hidden;
 }
-/* .image-container::-webkit-scrollbar {
+.drawing-image-container::-webkit-scrollbar {
   background-color: transparent;
   display: none;
-} */
+}
 @media only screen and (min-width: 768px) {
 
   .logo-container::before, 

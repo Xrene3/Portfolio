@@ -14,9 +14,12 @@ function AboutMe() {
                                     Knowledgeable in computer hardware, software and networking.
                                 </p>
                                 <br />
-                                <p className='indent-8'>
-                                    I have a strong interest about technology and interested to work in an environment where I can apply and enhance my Knowledge about technology
-                                </p>
+                                {/* <p className='indent-8'>I have a strong interest about technology and interested to work in an environment where I can apply and enhance my Knowledge about technology.</p>
+                                <p className="indent-8">I'm currently pursuing Web Develolopment and have made some projects before.</p> */}
+                                <p className="indent-8">I've been pursuing a career in the field of web development and have been enjoying it lately,
+                                    continuously trying out different technologies and programming style that I haven't tried / explored before.</p>
+                                <br />
+                                <p className="indent-8"><strong>More about me: </strong>I enjoy watching anime, playing video games and drawing. I've done some sketches and digital art before.</p>
                             </div>
                         </div>
                     </div>

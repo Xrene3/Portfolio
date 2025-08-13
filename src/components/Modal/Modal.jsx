@@ -3,7 +3,7 @@ import Card from '../../components/Card/Card.jsx'
 import Logo from '../../components/Logo/Logo.jsx'
 
 
-export default function Modal({ isOpen, onClose, project, children }) {
+export default function Modal({ isOpen, onClose, children }) {
     if (!isOpen) return null
     return createPortal(
         <>
@@ -17,7 +17,9 @@ export default function Modal({ isOpen, onClose, project, children }) {
                         >
                             ✕
                         </button>
-                        {children}
+                        <div>
+                            {children}
+                        </div>
                     </Card>
                 </div>
             </div>

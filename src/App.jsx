@@ -63,7 +63,7 @@ function App() {
           <AboutMe />
           <Skills />
           <Projects setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isOpen} setIsOpen={setIsOpen} />
-          <Contacts setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} />
+          <Contacts setIsHoveringCard={setIsHoveringCard} play={play} stop={stop} isOpen={isOpen} setIsOpen={setIsOpen} />
         </Slider>
 
         {/* Water footer */}
