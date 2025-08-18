@@ -1,6 +1,11 @@
 import Card from '../../components/Card/Card.jsx'
 import './AboutMe.css'
+import { intlFormatDistance, format, formatDistance, subDays } from 'date-fns'
+const dateNow = new Date()
+const graduateDate = format(new Date(2025, 8, 24), "MM/dd/yyyy");
+const diffDays = intlFormatDistance(graduateDate, dateNow);
 function AboutMe() {
+    console.log(diffDays)
     return (
         <>
             <div className="flex gap-5 lg:flex-row flex-col justify-center">
@@ -9,11 +14,11 @@ function AboutMe() {
                     <div>
                         <div className='lg:text-lg text-md'>
                             <div className='text-justify'>
-                                <p className='indent-8'>A graduate from Cavite State University with a
+                                <p className='indent-8'>Hi! My name is Ryan Clark M. Geneveo, I studied
                                     <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology. </span>
-                                    Knowledgeable in computer hardware, software and networking.
+                                    at Cavite State University - Silang Campus. I'm familiar with computer hardware, software and networking.
                                 </p>
-                                <br />
+                                <p className="text-sm my-2 text-neutral-600 dark:text-neutral-300">On set to graduate <span className="text-orange-600 dark:text-lime-200 underline">{diffDays}</span> | September 24, 2025</p>
                                 {/* <p className='indent-8'>I have a strong interest about technology and interested to work in an environment where I can apply and enhance my Knowledge about technology.</p>
                                 <p className="indent-8">I'm currently pursuing Web Develolopment and have made some projects before.</p> */}
                                 <p className="indent-8">I've been pursuing a career in the field of web development and have been enjoying it lately,

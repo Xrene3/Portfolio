@@ -141,6 +141,7 @@ const projects = [
                         <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.npmjs.com/package/react-wavify">React Wavify</a> for the waving background</li>
                         <li> <a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/">UseSound</a> for the sfx</li>
                         <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://techicons.dev/">Tech Icons</a> for the svg icons</li>
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://date-fns.org/">date-fns</a> to format the date for the graduation date difference</li>
                     </ol>
                 </div>
             </div>,
