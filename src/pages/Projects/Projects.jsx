@@ -9,9 +9,128 @@ import { getProjectImages } from './useExportProjectImages.js'
 
 const onesys_v1_images = getProjectImages('onesys_v1');
 const onesys_v2_images = getProjectImages('onesys_v2');
+const repay_images = getProjectImages('repay.ph');
 // console.log(onesys_v2_images)
 
 const projects = [
+        {
+        name: 'Repay.ph | Jr. Full Stack Developer',
+        summary: 'Worked on a production-level fullstack application, focusing on maintenance, feature enhancements, and cross-team collaboration.',
+        description:
+            <div>
+                <p className="mb-2">
+                    Currently working as a Junior Full Stack Developer at <a href="https://repay.ph/" target="_blank" className='font-bold text-violet-600 dark:text-lime-200 underline'>Repay.ph</a> from October 2025 to Present, contributing to the development and continuous improvement of an existing fullstack application.
+                </p>
+
+                <p className="mb-2">
+                    Focused on maintaining and enhancing system features, improving code quality, and ensuring a smooth user experience across the platform.
+                </p>
+
+                <div className="details mt-2.5">
+                    <p className="font-bold">Key Contributions</p>
+                    <ol className='list-disc ms-5'>
+                        <li>Maintained and enhanced an existing fullstack application</li>
+                        <li>Refactored legacy code for better reusability and maintainability</li>
+                        <li>Investigated and resolved issues from QA reports</li>
+                        <li>Improved UI/UX to enhance user experience</li>
+                        <li>Collaborated with DevOps, Backend, Mobile, and Creatives team</li>
+                        <li>Ensured alignment of features across different parts of the system</li>
+                    </ol>
+                </div>
+
+                <div className="additional-tech mt-2.5">
+                    <h1 className="font-bold">Additional technologies & Tools I've learned</h1>
+                    <ol className="list-disc ms-5">
+                        <li>Version Control (Git - collaborative workflows)</li>
+                        <li>WSL (Linux-based development environment)</li>
+                        <li>DDEV (PHP Development environment) with Docker</li>
+                        <li>GlazeWM (Productivity and workflow optimization)</li>
+                    </ol>
+                </div>
+
+                <div className="mt-2.5">
+                    <p>
+                        This experience strengthened my Laravel skills and introduced me to tools such as Git for team collaboration, WSL for development, and Docker through DDEV, giving me a foundational understanding of modern development workflows.
+                    </p>
+                </div>
+            </div>,
+        technologies: [
+            'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire', 'MySQL', 'DDEV', 'WSL', 'GitHub'
+        ],
+        images: repay_images
+    },
+    {
+        name: 'This portfolio!',
+        summary: 'My First React App!',
+        description:
+            <div>
+                <p>
+                    My first react app!
+                </p>
+                <p>
+                    I decided to go with React to create my portfolio as an opportunity to learn a new technology.
+                </p>
+                <div className="additional-tech mt-2.5">
+                    <h1 className="font-bold">Addditional stuff I used are:</h1>
+                    <ol className="list-disc ms-5">
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.npmjs.com/package/react-wavify">React Wavify</a> for the waving background</li>
+                        <li> <a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/">UseSound</a> for the sfx</li>
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://techicons.dev/">Tech Icons</a> for the svg icons</li>
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://date-fns.org/">date-fns</a> to format the date for the graduation date difference</li>
+                    </ol>
+                </div>
+            </div>,
+        technologies: [
+            'React', 'Tailwind CSS'
+        ],
+        additional: <div className='additional'>
+            <p>Also used the ff library</p>
+        </div>
+    },
+    {
+        name: 'Bayani OneSys v2 | OJT',
+        summary: 'Aimed to address the issues of the v1 and provide additional features for the end users while also making the system more developer friendly and future proof by moving to a more modern and widely adapted Tech Stack [TALL Stack].',
+        description:
+            <div>
+                <p className="mb-1">
+                    The first version of the app was completed and served its purpose well in the early stages. However, after 2–3 months of continuous usage, scalability issues started to emerge.</p>
+                <p className="mb-1">Although system was still running with very minor performance degregation, it will eventually be too costly to maintain as more barangay gets added to the system.</p>
+                <p className="mb-1">This was mainly due to the use of Firebase Realtime Database, which imposes monthly bandwidth limits.
+                    While Firebase offers subscription plans to support higher traffic, the costs quickly became unsustainable as the app grew.</p>
+                <br /> <br />
+                <p className="mb-2">To overcome these limitations, v2 was developed with a new and modern tech stack built for scalability, performance, and flexibility.</p>
+                <p className="mb-2"> The database was changed from <strong>FirebaseRTDB to MySQL</strong>, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs.</p>
+                <p className="mb-2">Additionally the new Tech Stack does not only provide a more optimized system than before but also provides a more maintainable and future-proof foundation for new features and improvements.</p>
+
+                <div className="details mt-2.5">
+                    <p className="font-bold">Some of the changes made to v2</p>
+                    <ol className='list-disc ms-5'>
+                        <li>Significantly improved performance</li>
+                        <li>UI / UX Improvements</li>
+                        <li>Switched from FirebaseRTDB to MySQL</li>
+                        <li>More robust certificate system</li>
+                        <li>Better tracking for issued certificate</li>
+                        <li>Customizable user permissions for each user type, unique to each barangay</li>
+                        <li>Expnaded theme selected per user instead of per Barangay</li>
+                    </ol>
+                </div>
+
+                <div className="additional-tech mt-2.5">
+                    <h1 className="font-bold">Addditional stuff we used are:</h1>
+                    <ol className="list-disc ms-5">
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://quilljs.com/">Quill.js</a> for a finer text editor</li>
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.chartjs.org/">Chart.js</a> to make different charts for analytics</li>
+                        <li> <a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://laravel-excel.com/">Laravel-Excel</a> for import and export Excel files</li>
+                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://heroicons.com/">Hero Icons</a> for the svg icons</li>
+                    </ol>
+                </div>
+            </div>
+        ,
+        technologies: [
+            'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire', 'DaisyUI', 'MySQL'
+        ],
+        images: onesys_v2_images,
+    },
     {
         name: 'Bayani OneSys v1 | Capstone Project',
         summary:
@@ -80,78 +199,6 @@ const projects = [
         ],
         images: onesys_v1_images,
     },
-    {
-        name: 'Bayani OneSys v2 | OJT',
-        summary: 'Aimed to address the issues of the v1 and provide additional features for the end users while also making the system more developer friendly and future proof by moving to a more modern and widely adapted Tech Stack [TALL Stack].',
-        description:
-            <div>
-                <p className="mb-1">
-                    The first version of the app was completed and served its purpose well in the early stages. However, after 2–3 months of continuous usage, scalability issues started to emerge.</p>
-                <p className="mb-1">Although system was still running with very minor performance degregation, it will eventually be too costly to maintain as more barangay gets added to the system.</p>
-                <p className="mb-1">This was mainly due to the use of Firebase Realtime Database, which imposes monthly bandwidth limits.
-                    While Firebase offers subscription plans to support higher traffic, the costs quickly became unsustainable as the app grew.</p>
-                <br /> <br />
-                <p className="mb-2">To overcome these limitations, v2 was developed with a new and modern tech stack built for scalability, performance, and flexibility.</p>
-                <p className="mb-2"> The database was changed from <strong>FirebaseRTDB to MySQL</strong>, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs.</p>
-                <p className="mb-2">Additionally the new Tech Stack does not only provide a more optimized system than before but also provides a more maintainable and future-proof foundation for new features and improvements.</p>
-
-                <div className="details mt-2.5">
-                    <p className="font-bold">Some of the changes made to v2</p>
-                    <ol className='list-disc ms-5'>
-                        <li>Significantly improved performance</li>
-                        <li>UI / UX Improvements</li>
-                        <li>Switched from FirebaseRTDB to MySQL</li>
-                        <li>More robust certificate system</li>
-                        <li>Better tracking for issued certificate</li>
-                        <li>Customizable user permissions for each user type, unique to each barangay</li>
-                        <li>Expnaded theme selected per user instead of per Barangay</li>
-                    </ol>
-                </div>
-
-                <div className="additional-tech mt-2.5">
-                    <h1 className="font-bold">Addditional stuff we used are:</h1>
-                    <ol className="list-disc ms-5">
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://quilljs.com/">Quill.js</a> for a finer text editor</li>
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.chartjs.org/">Chart.js</a> to make different charts for analytics</li>
-                        <li> <a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://laravel-excel.com/">Laravel-Excel</a> for import and export Excel files</li>
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://heroicons.com/">Hero Icons</a> for the svg icons</li>
-                    </ol>
-                </div>
-            </div>
-        ,
-        technologies: [
-            'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire', 'DaisyUI', 'MySQL'
-        ],
-        images: onesys_v2_images,
-    },
-    {
-        name: 'This portfolio!',
-        summary: 'My First React App!',
-        description:
-            <div>
-                <p>
-                    My first react app!
-                </p>
-                <p>
-                    I decided to go with React to create my portfolio as an opportunity to learn a new technology.
-                </p>
-                <div className="additional-tech mt-2.5">
-                    <h1 className="font-bold">Addditional stuff I used are:</h1>
-                    <ol className="list-disc ms-5">
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.npmjs.com/package/react-wavify">React Wavify</a> for the waving background</li>
-                        <li> <a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/">UseSound</a> for the sfx</li>
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://techicons.dev/">Tech Icons</a> for the svg icons</li>
-                        <li><a className="dark:text-indigo-200 text-sky-700 underline" target="_blank" href="https://date-fns.org/">date-fns</a> to format the date for the graduation date difference</li>
-                    </ol>
-                </div>
-            </div>,
-        technologies: [
-            'React', 'Tailwind CSS'
-        ],
-        additional: <div className='additional'>
-            <p>Also used the ff library</p>
-        </div>
-    },
 ];
 
 export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsOpen, closeModal }) {
@@ -170,7 +217,7 @@ export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsO
         <>
             <div className="flex-col">
                 <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">
-                    Projects
+                    Experience
                 </h1>
                 <div className="flex flex-col lg:flex-row lg:flex-wrap  justify-center gap-5 mb-4">
                     {projects.map((project, index) => (
