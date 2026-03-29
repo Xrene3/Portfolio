@@ -17,7 +17,15 @@ const icons = [
     'Livewire',
     'Firebase',
     'DaisyUI',
+    'GitHub',
+    'DDEV',
+]
+const current = [
+    'NextJS',
     'React',
+    'Docker',
+    'WSL',
+    'Linux',
 
 ]
 export default function Skills() {
@@ -56,9 +64,48 @@ export default function Skills() {
                         </Card>
                     </div> */}
                     <div className="w-full">
-                        <Card title="Technologies I've used">
+                        <Card title="Technologies & Tools I've used">
                             <div className="flex flex-wrap justify-center gap-4" >
                                 {icons.map((iconName, index) => (
+                                    <div
+                                        key={index}
+                                        onMouseEnter={() => { setIsHovering(true); playSfx(); }}
+                                        onMouseLeave={() => { setIsHovering(false); }}
+                                        className="
+                                                relative
+                                                logo-container
+                                                flex flex-col items-center
+
+
+                                                md:w-25 md:h-25  
+                                                w-20 h-20
+
+                                                justify-center
+                                                lg:p-6
+                                                p-5
+                                                border-1
+                                                bg-sky-50/20 dark:bg-neutral-400/20
+                                                text-zinc-600 dark:text-indigo-100
+                                                border-indigo-300/20
+                                                rounded-sm 
+                                                
+                                                shadow-md/20
+                                                md:hover:shadow-md/30
+                                                md:hover:scale-110
+                                                md:hover:rotate-2
+                                                cursor-default ease-in-out duration-150
+                                                ">
+                                        <Logo logo={iconName} />
+                                        <span className="lg:text-md text-xs mt-2 capitalize align-bottom font-semibold">{iconName}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-5 mt-10">
+                                What I'm Currently exploring / learning
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-4" >
+                                {current.map((iconName, index) => (
                                     <div
                                         key={index}
                                         onMouseEnter={() => { setIsHovering(true); playSfx(); }}
