@@ -4,7 +4,7 @@ import Logo from '../../components/Logo/Logo.jsx'
 export default function ProjectCard({ project, children, openModal, openProjectModal, setIsHoveringCard, play, stop }) {
     return (
         < >
-            <Card title={project.name && project.name} className="audio-on-hover md:max-w-lg w-full md:hover:rotate-1 ease-linear duration-100"
+            <Card title={project.name && project.name} className="audio-on-hover lg:max-w-lg w-full md:hover:rotate-1 ease-linear duration-100"
                 onMouseEnter={() => {
                     setIsHoveringCard(true);
                     play();
