@@ -1,18 +1,20 @@
-import ContactCard from './ContactCard.jsx'
-import Kaoruko from '../../assets/images/kaoruko.jpg'
-import PaimonDerp from '../../assets/images/paimon_derpp.jpg'
-import PaimonWah from '../../assets/images/paimon_wah.jpg'
-import Kaoruko3 from '../../assets/images/Kaoruko3.jpg'
-import KaorukoFufu from '../../assets/images/KaorukoFufu.jpg'
-import KaorukoPeace from '../../assets/images/KaorukoPeace.jpg'
-import KaorukoJump from '../../assets/images/kaoruko-jumping.gif'
+import ContactCard from './ContactCard.jsx';
+import Kaoruko from '../../assets/images/kaoruko.jpg';
+import PaimonDerp from '../../assets/images/paimon_derpp.jpg';
+import PaimonWah from '../../assets/images/paimon_wah.jpg';
+import Kaoruko3 from '../../assets/images/Kaoruko3.jpg';
+import KaorukoFufu from '../../assets/images/KaorukoFufu.jpg';
+import KaorukoPeace from '../../assets/images/KaorukoPeace.jpg';
+import KaorukoJump from '../../assets/images/kaoruko-jumping.gif';
+import { createPortal } from "react-dom";
 
-import { getArtImages } from './useExportArtImages.js'
-const sketchDrawings = getArtImages('Sketch');
-const digitalDrawings = getArtImages('Digital');
-
+import { getArtImages } from './useExportArtImages.js';
+const sketchDrawings = getArtImages('Sketch/Downscaled');
+const digitalDrawings = getArtImages('Digital/Downscaled');
+const gamingStuff = getArtImages('Gaming');
 // console.log(sketchDrawings)
 import Modal from '../../components/Modal/Modal.jsx'
+import { useState } from 'react'
 const contactList = [
     {
         name: "Github",
@@ -36,10 +38,12 @@ const contactList = [
 ]
 
 export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, stop }) {
+    const [previewImage, setPreviewImage] = useState(null);
+
     return (
         <>
             <div className="contacts">
-                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">
+                <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200 text-shadow-md text-shadow-sky-100 dark:text-shadow-lime-700 ">
                     Contacts and more
                 </h1>
                 <div className="flex md:flex-row flex-col justify-center gap-4.5 w-full">
@@ -78,70 +82,125 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
 
 
 
+                
+
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                     <div className="sum-stuff w-screen max-w-full p-0 md:max-w-[60vw] max-h-[70vh] overflow-auto">
-                        <h1 className="text-center text-lg md:text-2xl text-sky-700 dark:text-lime-200 font-bold mb-2 rotate-4">
-                            Som extra stuf!
+
+                        <h1 className="text-center text-lg md:text-2xl text-sky-700 dark:text-lime-200 font-bold mb-2">
+                            Extra Stuff
                         </h1>
 
-                        <div className="w-full flex md:flex-row flex-col-reverse md:justify-between justify-center ">
+                        <div className="w-full flex md:flex-row flex-col-reverse md:justify-between justify-center">
+
                             <div className="description dark:text-indigo-200 text-sky-700 md:w-2/3">
-                                <p>There's always more to learn, and this website was made for me to learn React JS as well as create my very own website, where I can mess around and put random stuff that I feel like putting and also serves as an archive of the things that I've done, whether it be a project, a system, a drawing or whatever it'd be. </p>
-                                {/* <br /> */}
+                                <p className="mb-2">
+                                    Here are some extra things I’ve worked on.
+                                </p>
+
+                                <p className="mb-2">
+                                    This includes drawings, small experiments, and other stuff I’ve made outside of my main projects.
+                                </p>
+
                                 <div className="flex md:justify-start justify-center gap-2.5">
                                     <img src={KaorukoJump} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
                                     <img src={KaorukoPeace} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
                                 </div>
-                                <p>Also here some of the stuff that i've drawn! </p>
 
+                                <p>Some of my drawings:</p>
                             </div>
+
                             <div className="images justify-center flex py-1.5">
                                 <img src={PaimonWah} alt="" className="md:w-54 md:h-54 w-25 h-25 object-cover rounded-full" />
                             </div>
                         </div>
 
                         <div className="drawing-image-container">
-                            <div className="border-zinc-400 border-1 my-2.5"></div>
-                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">Digital</h1>
-                            <div className="border-zinc-400 border-1 my-2.5"></div>
+
+                            {/* DIGITAL */}
+                            <div className="border-zinc-400 border my-2.5"></div>
+                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">
+                                Digital
+                            </h1>
+                            <div className="border-zinc-400 border my-2.5"></div>
+
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 justify-center">
                                 {digitalDrawings.map((src, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="relative aspect-[4/6] overflow-hidden rounded-lg shadow-lg"
-                                    >
+                                    <div key={idx} className="relative aspect-[4/6] overflow-hidden rounded-lg shadow-lg">
                                         <img
                                             src={src}
                                             alt=""
-                                            className="absolute inset-0 w-full h-full object-cover"
+                                            onClick={() => setPreviewImage(src)}
+                                            className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:scale-105 transition"
                                         />
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="border-zinc-400 border-1 my-2.5"></div>
-                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">Sketch</h1>
-                            <div className="border-zinc-400 border-1 my-2.5"></div>
+                            {/* SKETCH */}
+                            <div className="border-zinc-400 border my-2.5"></div>
+                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">
+                                Sketch
+                            </h1>
+                            <div className="border-zinc-400 border my-2.5"></div>
 
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                                 {sketchDrawings.map((src, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="relative aspect-[4/6] overflow-hidden rounded-lg shadow-lg"
-                                    >
+                                    <div key={idx} className="relative aspect-[4/6] overflow-hidden rounded-lg shadow-lg">
                                         <img
                                             src={src}
                                             alt=""
-                                            className="absolute inset-0 w-full h-full object-cover"
+                                            onClick={() => setPreviewImage(src)}
+                                            className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:scale-105 transition"
                                         />
                                     </div>
                                 ))}
                             </div>
 
-                        </div>
+                            {/* OPTIONAL: GAMING / OTHER */}
+                            {/* 
+                            <div className="border-zinc-400 border my-2.5"></div>
+                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">
+                                Gaming
+                            </h1>
+                            <div className="border-zinc-400 border my-2.5"></div>
 
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                                {gamingStuff.map((src, idx) => (
+                                    <div key={idx} className="relative aspect-video overflow-hidden rounded-lg shadow-lg">
+                                        <img
+                                            src={src}
+                                            alt=""
+                                            onClick={() => setPreviewImage(src)}
+                                            className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:scale-105 transition"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            */}
+
+                        </div>
                     </div>
                 </Modal>
+
+                {previewImage && createPortal(
+                    <div
+                        className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center"
+                        onClick={() => setPreviewImage(null)}
+                    >
+                        <img
+                            src={previewImage}
+                            alt=""
+                            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+
+                        <p className="absolute bottom-5 text-white text-sm opacity-70">
+                            Click anywhere to close
+                        </p>
+                    </div>,
+                    document.getElementById('modal-section') // same root as Modal
+                )}
             </div >
         </>
     )
