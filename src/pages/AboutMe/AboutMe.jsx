@@ -14,15 +14,14 @@ function AboutMe() {
                     <div>
                         <div className='lg:text-lg text-md'>
                             <div className='text-justify'>
-                                <p className='indent-8'>Hi! My name is Ryan Clark M. Geneveo, I studied
-                                    <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology. </span>
-                                    at Cavite State University - Silang Campus. I'm familiar with computer hardware, software and networking.
+                                <p className='indent-8'>Hi! My name is Ryan Clark M. Geneveo, 
+                                    Web developer with experience in creating smooth, modern, and responsive designs. I enjoy exploring new technologies and have worked-on fullstack applications using Laravel and the TALL stack. I am currently broadening my horizons by learning NextJS and React </p>
+                                <br />
+                                <p className='indent-8'>
+                                    I studied
+                                    <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology </span>
+                                    at Cavite State University -   <span> graduated on September 24, 2025 | {diffDays} </span>
                                 </p>
-                                <p className="text-sm my-2 text-neutral-600 dark:text-neutral-300">On set to graduate <span className="text-orange-600 dark:text-lime-200 underline">{diffDays}</span> | September 24, 2025</p>
-                                {/* <p className='indent-8'>I have a strong interest about technology and interested to work in an environment where I can apply and enhance my Knowledge about technology.</p>
-                                <p className="indent-8">I'm currently pursuing Web Develolopment and have made some projects before.</p> */}
-                                <p className="indent-8">I've been pursuing a career in the field of web development and have been enjoying it lately,
-                                    continuously trying out different technologies and programming style that I haven't tried / explored before.</p>
                                 <br />
                                 <p className="indent-8"><strong>More about me: </strong>I enjoy watching anime, playing video games and drawing. I've done some sketches and digital art before.</p>
                             </div>
