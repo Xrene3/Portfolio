@@ -47,7 +47,7 @@ function App() {
       ease-linear duration-300
       ">
         <div className="container w-full max-w-6xl mx-auto">
-          <div className="top-0 m-0 dark-mode-switch w-auto relative">
+          <div className="top-0 m-0 dark-mode-switch w-auto relative px-5">
             <div className="flex justify-center gap-3">
               <button
                 className=""
