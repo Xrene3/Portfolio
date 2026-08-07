@@ -60,14 +60,14 @@ function App() {
               </button>
             </div>
             
-            <div className="w-full text-center my-2.5 p-3 text-lg rounded-lg 
+            {/* <div className="w-full text-center my-2.5 p-3 text-lg rounded-lg 
               bg-purple-200/40 dark:bg-lime-800/40
               border-1 border-purple-600/60 dark:border-lime-200/60
               ">
                 <p>
                   I'm currently working on a <a href="https://xrene-resume-v2.vercel.app/" target="_blank" className='font-bold text-violet-600 dark:text-lime-200 underline'>v2 for my portfolio</a> using NextJS, React, Tailwind and Daisy UI
                 </p>
-              </div>
+              </div> */}
           </div>
 
           <Slider page={page} setPage={setPage} isMobile={isMobile}>
