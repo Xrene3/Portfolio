@@ -19,7 +19,7 @@ const projects = [
         description:
             <div>
                 <p className="mb-2">
-                    Currently working as a Junior Full Stack Developer at <a href="https://repay.ph/" target="_blank" className='font-bold text-violet-600 dark:text-lime-200 underline'>Repay.ph</a> from October 2025 to Present, contributing to the development and continuous improvement of an existing fullstack application.
+                    Previously worked as a Junior Full Stack Developer at <a href="https://repay.ph/" target="_blank" className='font-bold text-violet-600 dark:text-lime-200 underline'>Repay.ph</a> from October 2025 to July of 2026 (~10 Months), contributing to the development and continuous improvement of an existing fullstack application.
                 </p>
 
                 <p className="mb-2">
