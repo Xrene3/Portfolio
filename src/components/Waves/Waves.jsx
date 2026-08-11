@@ -34,7 +34,7 @@ function Wavify({ isWaving, setWave, theme }) {
                     paused={isWaving}
                     style={{ display: 'flex' }}
                     options={{
-                        height: 20,
+                        height: 40,
                         amplitude: 25,
                         speed: 0.15,
                         points: 3
@@ -47,7 +47,7 @@ function Wavify({ isWaving, setWave, theme }) {
                     paused={isWaving}
                     style={{ display: '' }}
                     options={{
-                        height: 70,
+                        height: 1,
                         amplitude: 20,
                         speed: 0.25,
                         points: 4
