@@ -2,6 +2,8 @@ import ContactCard from './ContactCard.jsx';
 import Kaoruko from '../../assets/images/kaoruko.jpg';
 import PaimonDerp from '../../assets/images/paimon_derpp.jpg';
 import PaimonWah from '../../assets/images/paimon_wah.jpg';
+import Mambo from '../../assets/images/obmam.jpg';
+import Puter from '../../assets/images/puter.png';
 import Kaoruko3 from '../../assets/images/Kaoruko3.jpg';
 import KaorukoFufu from '../../assets/images/KaorukoFufu.jpg';
 import KaorukoPeace from '../../assets/images/KaorukoPeace.jpg';
@@ -111,7 +113,9 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                             </div>
 
                             <div className="images justify-center flex py-1.5">
-                                <img src={PaimonWah} alt="" className="md:w-54 md:h-54 w-25 h-25 object-cover rounded-full" />
+                                {/* <img src={PaimonWah} alt="" className="md:w-54 md:h-54 w-25 h-25 object-cover rounded-full" /> */}
+                                <img src={Mambo} alt="" className="md:w-54 md:h-54 w-25 h-25 object-cover rounded-full" />
+
                             </div>
                         </div>
 

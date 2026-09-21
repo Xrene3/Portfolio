@@ -19,15 +19,44 @@ const icons = [
     'DaisyUI',
     'GitHub',
     'DDEV',
-]
-const current = [
     'NextJS',
     'React',
+]
+const current = [
     'Docker',
     'WSL',
     'Linux',
-
+    'CachyOS',
+    'Ubuntu',
+    'Virtual Machine',
 ]
+
+const techLinks = {
+    'HTML5': 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    'CSS3': 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    'JavaScript': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    'PHP': 'https://www.php.net/',
+    'MySQL': 'https://www.mysql.com/',
+    'Bootstrap': 'https://getbootstrap.com/',
+    'jQuery': 'https://jquery.com/',
+    'Tailwind CSS': 'https://tailwindcss.com/',
+    'Alpine.js': 'https://alpinejs.dev/',
+    'Laravel': 'https://laravel.com/',
+    'Livewire': 'https://livewire.laravel.com/',
+    'Firebase': 'https://firebase.google.com/',
+    'DaisyUI': 'https://daisyui.com/',
+    'GitHub': 'https://github.com/',
+    'DDEV': 'https://ddev.com/',
+    'NextJS': 'https://nextjs.org/',
+    'React': 'https://react.dev/',
+    'Docker': 'https://www.docker.com/',
+    'WSL': 'https://learn.microsoft.com/en-us/windows/wsl/',
+    'Linux': 'https://www.linux.org/',
+    'Virtual Machine': 'https://virt-manager.org/',
+    'CachyOS': 'https://cachyos.org/',
+    'Ubuntu': 'https://ubuntu.com/'
+}
+
 export default function Skills() {
     //Minecraft exp sfx config
     // const maxPlaybackRate = 1.1;
@@ -67,8 +96,11 @@ export default function Skills() {
                         <Card title="Technologies & Tools I've used">
                             <div className="flex flex-wrap justify-center gap-4" >
                                 {icons.map((iconName, index) => (
-                                    <div
+                                    <a
                                         key={index}
+                                        href={techLinks[iconName]}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         onMouseEnter={() => { setIsHovering(true); playSfx(); }}
                                         onMouseLeave={() => { setIsHovering(false); }}
                                         className="
@@ -93,21 +125,24 @@ export default function Skills() {
                                                 md:hover:shadow-md/30
                                                 md:hover:scale-110
                                                 md:hover:rotate-2
-                                                cursor-default ease-in-out duration-150
+                                                cursor-pointer ease-in-out duration-150
                                                 ">
                                         <Logo logo={iconName} />
                                         <span className="lg:text-md text-xs mt-2 capitalize align-bottom font-semibold">{iconName}</span>
-                                    </div>
+                                    </a>
                                 ))}
                             </div>
 
                             <h3 className="font-bold xl:text-xl md:text-lg text-orange-500 dark:text-lime-200 mb-5 mt-10">
-                                What I'm Currently exploring / learning
+                                What I'm Currently exploring / tinkering with
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4" >
                                 {current.map((iconName, index) => (
-                                    <div
+                                    <a
                                         key={index}
+                                        href={techLinks[iconName]}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         onMouseEnter={() => { setIsHovering(true); playSfx(); }}
                                         onMouseLeave={() => { setIsHovering(false); }}
                                         className="
@@ -132,11 +167,11 @@ export default function Skills() {
                                                 md:hover:shadow-md/30
                                                 md:hover:scale-110
                                                 md:hover:rotate-2
-                                                cursor-default ease-in-out duration-150
+                                                cursor-pointer ease-in-out duration-150
                                                 ">
                                         <Logo logo={iconName} />
                                         <span className="lg:text-md text-xs mt-2 capitalize align-bottom font-semibold">{iconName}</span>
-                                    </div>
+                                    </a>
                                 ))}
                             </div>
                         </Card>
