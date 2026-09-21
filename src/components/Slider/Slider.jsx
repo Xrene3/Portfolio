@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 export default function Slider({ children, page, setPage, isMobile }) {
     const totalPages = children.length || 0;
@@ -9,6 +9,27 @@ export default function Slider({ children, page, setPage, isMobile }) {
     const prevSlide = () => {
         setPage(prev => (prev > 0 ? prev - 1 : prev));
     }
+
+    const handleNavigationKey = (event) => {
+        if(event.key === 'ArrowLeft'){
+            prevSlide();
+            console.log('Move page to left')
+        }else if(event.key === 'ArrowRight'){
+            nextSlide();
+            console.log('move page to right')
+        }
+        console.log(event);
+    }
+
+    useEffect(()=>{
+        window.addEventListener('keydown', handleNavigationKey);
+
+        return () =>{
+            window.removeEventListener('keydown', handleNavigationKey);
+        }
+    }, [])
+
+
 
     return (
         <>
