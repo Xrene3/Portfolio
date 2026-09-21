@@ -14,16 +14,21 @@ function AboutMe() {
                     <div>
                         <div className='lg:text-lg text-md'>
                             <div className='text-justify'>
-                                <p className='indent-8'>Hi! My name is Ryan Clark M. Geneveo, 
-                                    Web developer with experience in creating smooth, modern, and responsive designs. I enjoy exploring new technologies and have worked-on fullstack applications using Laravel and the TALL stack. I am currently broadening my horizons by learning NextJS and React </p>
-                                <br />
-                                <p className='indent-8'>
-                                    I studied
-                                    <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology </span>
-                                    at Cavite State University -   <span> graduated on September 24, 2025 | {diffDays} </span>
+                                <p className='indent-8'> 
+                                    I'm Ryan Clark Geneveo, Junior Fullstack Developer with experience in building smooth, modern and responsive websites. 
+                                    Aside from web development, I also know how to troubleshoot computer hardware and sofware, OS installation, and basic networking. 
+                                    I also like trying out other technologies for example, I'm currently learning about Linux, Docker and Virtualization
                                 </p>
                                 <br />
-                                <p className="indent-8"><strong>More about me: </strong>I enjoy watching anime, playing video games and drawing. I've done some sketches and digital art before.</p>
+                                <p className='indent-8'>
+                                    Graduate of 
+                                    <span className="text-orange-600 dark:text-orange-200"> Bachelor of Science in Information Technology (BSIT) </span>
+                                    at Cavite State University - Silang Campus 
+                                    <br />
+                                    <i className="text-sm"><span> Graduated on September 24, 2025 ( {diffDays} )</span></i>
+                                </p>
+                                <br />
+                                <p className="indent-8"><strong>More about me: </strong>I enjoy tinkering with computers, watching anime, playing video games and drawing. I've done some sketches and digital art before.</p>
                             </div>
                         </div>
                     </div>
