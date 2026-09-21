@@ -13,12 +13,12 @@ export default function Slider({ children, page, setPage, isMobile }) {
     const handleNavigationKey = (event) => {
         if(event.key === 'ArrowLeft'){
             prevSlide();
-            console.log('Move page to left')
+            // console.log('Move page to left')
         }else if(event.key === 'ArrowRight'){
             nextSlide();
-            console.log('move page to right')
+            // console.log('move page to right')
         }
-        console.log(event);
+        // console.log(event);
     }
 
     useEffect(()=>{
