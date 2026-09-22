@@ -6,10 +6,34 @@ import Modal from '../../components/Modal/Modal.jsx'
 
 import { useState } from 'react';
 import { getProjectImages } from './useExportProjectImages.js'
+import PenPlotterDemo from '../../assets/images/Experiments/pen_plottter_demo_timelapse.mp4';
 
 const onesys_v1_images = getProjectImages('onesys_v1');
 const onesys_v2_images = getProjectImages('onesys_v2');
 const repay_images = getProjectImages('repay.ph');
+const experimentImages = import.meta.glob('/src/assets/images/Experiments/*.{png,jpg,jpeg,webp}', {
+    eager: true,
+    import: 'default'
+});
+const getExperimentImages = (filenames) => filenames
+    .map((filename) => experimentImages[`/src/assets/images/Experiments/${filename}`])
+    .filter(Boolean);
+
+const penPlotterImages = getExperimentImages([
+    'pen_plotter.jpeg',
+    'pen_plotter_arduino.jpeg',
+    'pen_plotter_group.jpeg',
+    'pen_plotter_output.jpg',
+    'pen_plotter_output_presentation.jpeg',
+    'pen_plotter_wiring_diagram.webp'
+]);
+const piholeImages = getExperimentImages(['pihole.png', 'virtualization.png']);
+const hardwareImages = getExperimentImages([
+    'acer_aspire.jpg',
+    'acer_aspire_2.jpg',
+    'asus_tuf_animegamelauncher.jpg',
+    'asus_tuf_board.jpg'
+]);
 // console.log(onesys_v2_images)
 
 const projects = [
@@ -201,6 +225,37 @@ const projects = [
     },
 ];
 
+const otherProjects = [
+    
+    {
+        name: 'Pi-hole',
+        summary: 'Running Pi-hole in Docker inside an Ubuntu virtual machine.',
+        description: <div>
+            <p>Set up Pi-hole in Docker within an Ubuntu virtual machine</p>
+        </div>,
+        technologies: ['Docker', 'Ubuntu', 'Virtual Machine'],
+        images: piholeImages
+    },
+    {
+        name: 'Computer Hardware Maintenance',
+        summary: 'Troubleshooting computer hardware and performing maintenance.',
+        description: <div>
+            <p>Hands-on computer hardware troubleshooting and maintenance</p>
+        </div>,
+        images: hardwareImages
+    },
+    {
+        name: 'Budget CNC Pen Plotter | College Project',
+        summary: 'A budget CNC pen plotter created with my college group using Arduino and GRBL firmware.',
+        description: <div>
+            <p className="mb-2">A budget CNC pen plotter that my group and I created in college using Arduino and GRBL firmware</p>
+            <p>The gallery includes the build, wiring, output, and a demonstration timelapse</p>
+        </div>,
+        images: penPlotterImages,
+        videos: [PenPlotterDemo]
+    },
+];
+
 export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsOpen, closeModal }) {
     const [selectedProject, setSelectedProject] = useState(null);
     const openProjectModal = (project) => {
@@ -219,10 +274,24 @@ export default function Projects({ setIsHoveringCard, play, stop, isOpen, setIsO
                 <h1 className="text-4xl mb-12 py-2.5 text-center w-2/3 mx-auto relative font-bold text-sky-700 dark:text-lime-200">
                     Experience
                 </h1>
+                <h2 className="text-2xl mb-5 text-center font-bold text-sky-700 dark:text-lime-200">Web Development</h2>
                 <div className="flex flex-col sm:flex-row sm:flex-wrap  justify-center gap-5 mb-4">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={index}
+                            project={project}
+                            openProjectModal={openProjectModal}
+                            setIsHoveringCard={setIsHoveringCard} play={play} stop={stop}
+                        />
+                    ))}
+                </div>
+
+                <div className="border-zinc-400 border my-8"></div>
+                <h2 className="text-2xl mb-5 text-center font-bold text-sky-700 dark:text-lime-200">Other Projects / Technical Experiments</h2>
+                <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-5 mb-4">
+                    {otherProjects.map((project, index) => (
+                        <ProjectCard
+                            key={project.name + index}
                             project={project}
                             openProjectModal={openProjectModal}
                             setIsHoveringCard={setIsHoveringCard} play={play} stop={stop}

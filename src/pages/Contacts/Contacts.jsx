@@ -13,7 +13,6 @@ import { createPortal } from "react-dom";
 import { getArtImages } from './useExportArtImages.js';
 const sketchDrawings = getArtImages('Sketch/Downscaled');
 const digitalDrawings = getArtImages('Digital/Downscaled');
-const gamingStuff = getArtImages('Gaming');
 // console.log(sketchDrawings)
 import Modal from '../../components/Modal/Modal.jsx'
 import { useState } from 'react'
@@ -109,7 +108,7 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                                     <img src={KaorukoPeace} alt="" className="w-25 h-25 object-cover rounded my-2.5" />
                                 </div>
 
-                                <p>Some of my drawings:</p>
+                                {/* <p>Some of my drawings:</p> */}
                             </div>
 
                             <div className="images justify-center flex py-1.5">
@@ -161,27 +160,6 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
                                 ))}
                             </div>
 
-                            {/* OPTIONAL: GAMING / OTHER */}
-                            {/* 
-                            <div className="border-zinc-400 border my-2.5"></div>
-                            <h1 className="text-center text-lg text-sky-700 dark:text-lime-200 font-bold">
-                                Gaming
-                            </h1>
-                            <div className="border-zinc-400 border my-2.5"></div>
-
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                                {gamingStuff.map((src, idx) => (
-                                    <div key={idx} className="relative aspect-video overflow-hidden rounded-lg shadow-lg">
-                                        <img
-                                            src={src}
-                                            alt=""
-                                            onClick={() => setPreviewImage(src)}
-                                            className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:scale-105 transition"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            */}
 
                         </div>
                     </div>

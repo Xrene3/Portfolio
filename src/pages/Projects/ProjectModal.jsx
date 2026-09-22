@@ -22,12 +22,17 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                         <div className="details lg:max-w-[35vw] ms-5 text-neutral-600 dark:text-gray-400">
                             {project?.description && project.description}
                         </div>
-                        {project?.images &&
-                            <div className="image-container flex flex-col gap-y-3 mx-auto max-h-[60vh] md:overflow-auto">
-                                {project.images.map((image, index) => (
-                                    <img src={image} alt="" key={index} />
+                        {(project?.images || project?.videos) &&
+                            <div className="image-container flex w-full lg:max-w-[35vw] flex-col gap-y-3 mx-auto max-h-[60vh] md:overflow-auto">
+                                {project?.images?.map((image, index) => (
+                                    <img src={image} alt="" key={index} className="w-full h-auto" />
                                 ))}
-                                {/* <img src="/Portfolio/src/assets/images/Projects/onesys_v2/image1.png" alt="" /> */}
+                                {project?.videos?.map((video, index) => (
+                                    <video controls key={index} className="w-full h-auto">
+                                        <source src={video} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                ))}
                             </div>
                         }
                     </div>
