@@ -21,6 +21,9 @@ const icons = [
     'DDEV',
     'NextJS',
     'React',
+    'CodexAI',
+    'ClaudeAI',
+    'QwenAI',
 ]
 const current = [
     'Docker',
@@ -49,6 +52,9 @@ const techLinks = {
     'DDEV': 'https://ddev.com/',
     'NextJS': 'https://nextjs.org/',
     'React': 'https://react.dev/',
+    'CodexAI': 'https://openai.com/codex/',
+    'ClaudeAI': 'https://www.anthropic.com/claude',
+    'QwenAI': 'https://qwen.ai/',
     'Docker': 'https://www.docker.com/',
     'WSL': 'https://learn.microsoft.com/en-us/windows/wsl/',
     'Linux': 'https://www.linux.org/',
