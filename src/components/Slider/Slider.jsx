@@ -54,7 +54,7 @@ export default function Slider({ children, page, setPage, isMobile }) {
                 // </div>
 
                 <div className="flex justify-between h-full">
-                    <div className={`${page < 1 ? 'hidden' : ''} fixed absolute md:top-1/2 left-0 z-70 md:me-5`}>
+                    <div className={`${page < 1 ? 'hidden' : ''} fixed left-3 top-1/2 z-[60] -translate-y-1/2 md:left-5`}>
                         <button
                             onClick={prevSlide}
                             className="py-5 rounded 
@@ -73,7 +73,7 @@ export default function Slider({ children, page, setPage, isMobile }) {
                         </div>
                     </div>
 
-                    <div className={`${page >= totalPages - 1 ? 'hidden' : ''} fixed absolute md:top-1/2 right-0 z-70 md:ms-5`}>
+                    <div className={`${page >= totalPages - 1 ? 'hidden' : ''} fixed right-3 top-1/2 z-[60] -translate-y-1/2 md:right-5`}>
                         <button
                             onClick={nextSlide}
                             className="py-5 rounded 

@@ -79,7 +79,7 @@ const projects = [
                 </div>
             </div>,
         technologies: [
-            'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire', 'MySQL', 'DDEV', 'WSL', 'GitHub'
+            'Tailwind CSS', 'Alpine.js', 'Laravel', 'Livewire', 'MySQL', 'GitHub'
         ],
         images: repay_images
     },
