@@ -227,15 +227,15 @@ const projects = [
 
 const otherProjects = [
     
-    {
-        name: 'Pi-hole',
-        summary: 'Running Pi-hole in Docker inside an Ubuntu virtual machine.',
-        description: <div>
-            <p>Set up Pi-hole in Docker within an Ubuntu virtual machine</p>
-        </div>,
-        technologies: ['Docker', 'Ubuntu', 'Virtual Machine'],
-        images: piholeImages
-    },
+    // {
+    //     name: 'Pi-hole',
+    //     summary: 'Running Pi-hole in Docker inside an Ubuntu virtual machine.',
+    //     description: <div>
+    //         <p>Set up Pi-hole in Docker within an Ubuntu virtual machine</p>
+    //     </div>,
+    //     technologies: ['Docker', 'Ubuntu', 'Virtual Machine'],
+    //     images: piholeImages
+    // },
     {
         name: 'Computer Hardware Maintenance',
         summary: 'Troubleshooting computer hardware and performing maintenance.',
