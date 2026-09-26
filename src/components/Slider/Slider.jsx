@@ -34,22 +34,25 @@ export default function Slider({ children, page, setPage, isMobile }) {
     return (
         <>
         
-            {/* Shows all of the page, comment the bottom to keep it all displayed */}
-            {/* <div className="flex flex-col gap-5 justify-center">
-                <div className="p-2.5 z-50 flex flex-col justify-center w-full gap-y-15 mb-5">
-                    {children}
-                </div>
-            </div> */}
+            
 
             {
             isMobile ?
-                <div className="flex flex-col gap-5 justify-center w-full">
+                <div className="flex flex-col gap-5 justify-center w-full ">
                     <div className="p-2 5 z-50 flex flex-col gap-y-5 mb-5">
                         {children}
                     </div>
                 </div>
 
                 :
+
+                /* Shows all of the page, comment the bottom to keep it all displayed */
+                // <div className="flex justify-center mt-[6vh] w-full z-50 md:px-30">
+                //     <div className="p-2.5 z-50 flex flex-col justify-center w-full gap-y-15 mb-5">
+                //         {children}
+                //     </div>
+                // </div>
+
                 <div className="flex justify-between h-full">
                     <div className={`${page < 1 ? 'hidden' : ''} fixed absolute md:top-1/2 left-0 z-70 md:me-5`}>
                         <button
