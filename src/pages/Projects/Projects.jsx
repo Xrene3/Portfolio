@@ -7,6 +7,7 @@ import Modal from '../../components/Modal/Modal.jsx'
 import { useState } from 'react';
 import { getProjectImages } from './useExportProjectImages.js'
 import PenPlotterDemo from '../../assets/images/Experiments/pen_plottter_demo_timelapse.mp4';
+import onesysCertificate from '../../assets/images/Projects/onesys_Geneveo.pdf';
 
 const onesys_v1_images = getProjectImages('onesys_v1');
 const onesys_v2_images = getProjectImages('onesys_v2');
@@ -125,6 +126,7 @@ const projects = [
                 <p className="mb-2">To overcome these limitations, v2 was developed with a new and modern tech stack built for scalability, performance, and flexibility.</p>
                 <p className="mb-2"> The database was changed from <strong>FirebaseRTDB to MySQL</strong>, allowing for more structured data handling, greater control over queries, and significantly reduced operational costs.</p>
                 <p className="mb-2">Additionally the new Tech Stack does not only provide a more optimized system than before but also provides a more maintainable and future-proof foundation for new features and improvements.</p>
+                <p className="mb-2">After the migration was completed, the system was handed over to the developers who would continue maintaining it. Its continued use is also documented in this <a className="dark:text-indigo-200 text-sky-700 underline" href="https://pia.gov.ph/news/cvsu-develops-e-governance-system-for-barangays/" target="_blank" rel="noreferrer">PIA article about CvSU’s e-governance system for barangays</a>.</p>
 
                 <div className="details mt-2.5">
                     <p className="font-bold">Some of the changes made to v2</p>
@@ -173,6 +175,7 @@ const projects = [
                     specifically designed for each barangay to ensure the efficient operation of work
                     processes and the effective management of resident and household records. The system also allows the issuance of certificate and capable of creating different certificate type.
                 </p>
+                <p className="mt-2">Our school recognized the project with a certificate. Preview it in the project gallery.</p>
                 <div className="details mt-2.5">
                     <p>The system were focused on these area</p>
                     <ol className='list-disc ms-5'>
@@ -222,6 +225,7 @@ const projects = [
             'Bootstrap', 'Laravel', 'jQuery', 'Firebase'
         ],
         images: onesys_v1_images,
+        documents: [{ src: onesysCertificate, title: 'OneSys school certificate that was given to eachone of us researchers' }],
     },
 ];
 
