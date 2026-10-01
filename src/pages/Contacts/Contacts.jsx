@@ -187,3 +187,42 @@ export default function Contacts({ isOpen, setIsOpen, setIsHoveringCard, play, s
         </>
     )
 }
+
+// Shared home for the existing extra-stuff modal, available without the Contacts page.
+export function ExtraStuffModal({ isOpen, onClose }) {
+    const [previewImage, setPreviewImage] = useState(null);
+    const renderGallery = (items) => items.map((src, idx) => (
+        <button type="button" key={idx} onClick={() => setPreviewImage(src)} className="relative aspect-[4/6] overflow-hidden rounded-lg shadow-lg">
+            <img src={src} alt="Open artwork preview" className="absolute inset-0 h-full w-full object-cover transition hover:scale-105" />
+        </button>
+    ));
+
+    return <>
+        <Modal isOpen={isOpen} onClose={onClose}>
+            <div className="w-screen max-w-full p-0 md:max-w-[60vw] max-h-[70vh] overflow-auto">
+                <h1 className="mb-2 text-center text-lg font-bold text-sky-700 dark:text-lime-200 md:text-2xl">Extra Stuff</h1>
+                <div className="flex w-full flex-col-reverse justify-center md:flex-row md:justify-between">
+                    <div className="text-sky-700 dark:text-indigo-200 md:w-2/3">
+                        <p className="mb-2">Here are some extra things I’ve worked on.</p>
+                        <p className="mb-2">This includes drawings, small experiments, and other stuff I’ve made outside of my main projects.</p>
+                        <div className="flex justify-center gap-2.5 md:justify-start">
+                            <img src={KaorukoJump} alt="Kaoruko jumping" className="my-2.5 h-25 w-25 rounded object-cover" />
+                            <img src={KaorukoPeace} alt="Kaoruko making a peace sign" className="my-2.5 h-25 w-25 rounded object-cover" />
+                        </div>
+                    </div>
+                    <div className="flex justify-center py-1.5"><img src={Mambo} alt="Mambo" className="h-25 w-25 rounded-full object-cover md:h-54 md:w-54" /></div>
+                </div>
+                <h2 className="my-2.5 border-y border-zinc-400 py-2 text-center text-lg font-bold text-sky-700 dark:text-lime-200">Digital</h2>
+                <div className="grid grid-cols-2 justify-center gap-3 sm:grid-cols-3 md:grid-cols-4">{renderGallery(digitalDrawings)}</div>
+                <h2 className="my-2.5 border-y border-zinc-400 py-2 text-center text-lg font-bold text-sky-700 dark:text-lime-200">Sketch</h2>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">{renderGallery(sketchDrawings)}</div>
+            </div>
+        </Modal>
+        {previewImage && createPortal(
+            <button type="button" aria-label="Close artwork preview" className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80" onClick={() => setPreviewImage(null)}>
+                <img src={previewImage} alt="Artwork preview" className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-xl" />
+                <span className="absolute bottom-5 text-sm text-white/70">Click anywhere to close</span>
+            </button>, document.getElementById('modal-section')
+        )}
+    </>;
+}
