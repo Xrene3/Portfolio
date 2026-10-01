@@ -27,7 +27,7 @@ const contactLinks = [
     },
 ];
 
-export default function Welcome() {
+export default function Welcome({ onMamboClick }) {
     return (
         <div className="flex min-h-[31.25rem] w-full flex-col-reverse gap-8 p-5 lg:flex-row md:items-center md:gap-10">
             <div className="min-w-0 flex-1">
@@ -73,7 +73,9 @@ export default function Welcome() {
             </div>
 
             <div className="mambo flex w-full shrink-0 justify-center md:w-2/5 ">
-                <img src={Mambo} alt="" width="400" height="400" className="aspect-square w-48 rounded-full object-cover sm:w-56 md:w-full md:max-w-[25rem] shadow-lg border-2 border-cyan-400 shadow-cyan-400 dark:border-lime-200/70  dark:shadow-lime-200" />
+                <button type="button" onClick={onMamboClick} aria-label="Open extra stuff" className="rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500 dark:focus-visible:ring-lime-200">
+                    <img src={Mambo} alt="Mambo" width="400" height="400" className="aspect-square w-48 rounded-full object-cover sm:w-56 md:w-full md:max-w-[25rem] shadow-lg border-2 border-cyan-400 shadow-cyan-400 dark:border-lime-200/70 dark:shadow-lime-200 cursor-pointer" />
+                </button>
             </div>
         </div>
     )

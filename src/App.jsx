@@ -10,6 +10,7 @@ import AboutMe from './pages/AboutMe/AboutMe.jsx'
 import Skills from './pages/Skills/Skills.jsx'
 import Projects from './pages/Projects/Projects.jsx'
 import Welcome from './pages/Welcome/Welcome.jsx'
+import { ExtraStuffModal } from './pages/Contacts/Contacts.jsx'
 
 import './font.css'
 import './App.css'
@@ -27,6 +28,7 @@ function App() {
   const { theme, toggleTheme } = useTheme();
   const { isMobile } = useMobile();
   const [isProjectsOpen, setProjectsOpen] = useState(false);
+  const [isExtraStuffOpen, setExtraStuffOpen] = useState(false);
   const [, setIsHoveringCard] = useState(false);
   const [isWaving, setWave] = useState(false);
   const [page, setPage] = useState(0);
@@ -120,7 +122,7 @@ function App() {
         <div className="container mx-auto">
           <Slider page={page} setPage={setPage} isMobile={isMobile}>
             <section id="welcome" className="scroll-mt-24">
-              <Welcome />
+              <Welcome onMamboClick={() => setExtraStuffOpen(true)} />
             </section>
             <section id="about" className="scroll-mt-24">
               <AboutMe />
@@ -134,6 +136,8 @@ function App() {
           </Slider>
         </div>
       </div>
+
+      <ExtraStuffModal isOpen={isExtraStuffOpen} onClose={() => setExtraStuffOpen(false)} />
 
       <Waves isWaving={isWaving} isMobile={isMobile} theme={theme} />
     </main>
