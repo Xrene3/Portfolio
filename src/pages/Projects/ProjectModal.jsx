@@ -22,7 +22,7 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                         <div className="details lg:max-w-[35vw] ms-5 text-neutral-600 dark:text-gray-400">
                             {project?.description && project.description}
                         </div>
-                        {(project?.images || project?.videos) &&
+                        {(project?.images || project?.videos || project?.documents) &&
                             <div className="image-container flex w-full lg:max-w-[35vw] flex-col gap-y-3 mx-auto max-h-[60vh] md:overflow-auto">
                                 {project?.images?.map((image, index) => (
                                     <img src={image} alt="" key={index} className="w-full h-auto" />
@@ -32,6 +32,16 @@ export default function ProjectModal({ isOpen, closeModal, project, children }) 
                                         <source src={video} type="video/mp4" />
                                         Your browser does not support the video tag.
                                     </video>
+                                ))}
+                                {project?.documents?.map((document, index) => (
+                                    <section key={index} className="w-full">
+                                        <h3 className="mb-2 font-semibold">{document.title}</h3>
+                                        <iframe
+                                            src={document.src}
+                                            title={document.title}
+                                            className="w-full h-[60vh] border border-zinc-300 dark:border-zinc-600"
+                                        />
+                                    </section>
                                 ))}
                             </div>
                         }
